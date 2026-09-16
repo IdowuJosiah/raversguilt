@@ -36,6 +36,118 @@
   z-index: 3;
 }
 
+/* ================================================================
+   HOME PAGE COMPONENTS
+   ================================================================ */
+
+/* --- Hero section --- */
+.home-hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 70svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+
+.home-hero-inner {
+  padding: 0 20px;
+}
+
+.home-stats-row {
+  flex-wrap: wrap;
+  gap: 20px !important;
+}
+
+/* --- Featured article card (landscape) --- */
+.featured-article-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+.featured-article-card:hover { border-color: var(--violet-dim); }
+
+.featured-article-visual {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background: var(--flyer-base);
+}
+
+.featured-article-body {
+  padding: 20px;
+}
+
+/* --- Article cards grid --- */
+.home-articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article-card {
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface);
+  transition: border-color 0.18s, transform 0.18s;
+}
+.article-card:hover {
+  border-color: var(--violet-dim);
+  transform: translateY(-2px);
+}
+
+.article-card-visual {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.article-card-body {
+  padding: 14px 16px 16px;
+}
+
+/* --- Gallery grid --- */
+.home-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.home-gallery-tile {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  display: block;
+  transition: transform 0.18s;
+}
+.home-gallery-tile:hover { transform: scale(1.02); }
+
+/* --- Residencies grid --- */
+.residencies-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.residency-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  transition: border-color 0.18s;
+  color: var(--text);
+}
+.residency-chip:hover { border-color: var(--violet-dim); }
+
 /* ---- Focus ring ---- */
 :focus-visible {
   outline: 2px solid var(--violet);
@@ -90,28 +202,60 @@
     text-decoration: none;
   }
 
-  /* ---- Home: two-column hero (hero text + featured card) ---- */
-  .home-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-    padding-top: 28px;
+  /* ---- Home: hero ---- */
+  .home-hero-section {
+    min-height: 82svh;
+    padding-bottom: 64px;
+    /* break out of page-outer's 60px padding so blobs bleed to edges */
+    margin: 0 calc(-1 * var(--desk-px));
+    padding-left: var(--desk-px);
+    padding-right: var(--desk-px);
   }
-  .home-top-divider { display: none !important; }
-  .home-h1 { font-size: 72px !important; line-height: 1.0 !important; }
-  .home-lede { font-size: 17px !important; max-width: none !important; }
-  .home-cta-row { margin-top: 30px !important; }
+  .home-h1 { font-size: 96px !important; line-height: 0.94 !important; letter-spacing: -0.025em !important; }
+  .home-lede { font-size: 18px !important; max-width: 560px !important; }
+  .home-cta-row { margin-top: 36px !important; }
   .home-cta-row > * { flex: 0 0 auto !important; }
+  .home-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-end; }
+  .home-stats-row { grid-column: 1 / -1; margin-top: 48px !important; gap: 48px !important; flex-wrap: nowrap !important; }
 
-  /* ---- Home: this-week as 3-col ---- */
+  /* ---- Home: featured article card — landscape on desktop ---- */
+  .featured-article-card { flex-direction: row; }
+  .featured-article-visual { width: 420px; flex-shrink: 0; height: auto; min-height: 360px; }
+  .featured-article-body { padding: 32px 28px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .featured-article-h2 { font-size: 42px !important; }
+
+  /* ---- Home: article grid — 3 col on desktop ---- */
+  .home-articles-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+  }
+  .article-card-visual { height: 240px; }
+
+  /* ---- Home: gallery — 4 col on desktop ---- */
+  .home-gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+  .home-gallery-tile { height: 220px; }
+  .home-gallery-tile--featured { grid-column: span 2; height: 260px; }
+
+  /* ---- Home: residencies grid — 2 col on desktop ---- */
+  .residencies-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .residency-chip { padding: 18px 20px; }
+
+  /* ---- Home: old this-week ---- */
   .this-week-grid {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 16px !important;
   }
 
-  /* ---- Home: residencies ---- */
+  /* ---- Home: residencies heading ---- */
   .residencies-section h2 { font-size: 24px !important; }
 
   /* ---- About page ---- */
