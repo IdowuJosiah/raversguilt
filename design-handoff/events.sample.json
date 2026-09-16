@@ -1,0 +1,81 @@
+{
+  "events": [
+    {
+      "slug": "off-duty-taco-tuesday",
+      "title": "Off Duty — Taco Tuesday",
+      "series": "Off Duty",
+      "startsAt": "2026-09-09T20:00:00+01:00",
+      "timeLabel": "8PM",
+      "venueName": "[Venue TBA]",
+      "area": "Lagos Mainland",
+      "guiltyPick": false
+    },
+    {
+      "slug": "acid-church-vol-2",
+      "title": "Acid Church, Vol. II",
+      "series": "303 Garage",
+      "startsAt": "2026-09-12T22:00:00+01:00",
+      "timeLabel": "10PM – late",
+      "venueName": "[Venue TBA]",
+      "area": "Lagos Mainland",
+      "address": "[Venue address — shared 24h before doors]",
+      "mapUrl": "",
+      "description": "303 Garage returns for a second sermon of raw acid and warehouse house. Doors at ten, no dress code, no phones on the floor. Bring your worst decisions — we'll file them under \"guilty.\"",
+      "lineup": [
+        { "name": "[DJ NAME]", "role": "HEADLINE · 12–2AM", "b2b": true },
+        { "name": "[DJ NAME]", "role": "SUPPORT · 10–12" }
+      ],
+      "ticketUrl": "",
+      "priceLabel": "₦[PRICE]",
+      "guiltyPick": true
+    },
+    {
+      "slug": "void-house-late-sermon",
+      "title": "Late Sermon",
+      "series": "Void House",
+      "startsAt": "2026-09-13T23:00:00+01:00",
+      "timeLabel": "11PM",
+      "venueName": "[Venue TBA]",
+      "area": "Island",
+      "guiltyPick": false
+    },
+    {
+      "slug": "group-therapy-session-07",
+      "title": "Session 07",
+      "series": "Group Therapy",
+      "startsAt": "2026-09-18T21:00:00+01:00",
+      "timeLabel": "9PM",
+      "venueName": "[Venue TBA]",
+      "area": "Lagos Mainland",
+      "guiltyPick": false
+    },
+    {
+      "slug": "groove-station-last-train-home",
+      "title": "Last Train Home",
+      "series": "Groove Station",
+      "startsAt": "2026-09-26T22:00:00+01:00",
+      "timeLabel": "10PM",
+      "venueName": "[Venue TBA]",
+      "area": "Island",
+      "guiltyPick": true
+    }
+  ],
+  "galleryNights": [
+    {
+      "slug": "void-house-first-communion",
+      "title": "First Communion",
+      "series": "Void House",
+      "date": "2026-08-30",
+      "recapLength": "0:48",
+      "featured": true,
+      "photos": []
+    },
+    {
+      "slug": "303-garage-vol-1",
+      "title": "303 Garage, Vol. I",
+      "series": "303 Garage",
+      "date": "2026-08-15",
+      "photos": []
+    }
+  ]
+}

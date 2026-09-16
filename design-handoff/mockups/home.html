@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raversguilt — Home</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    :root{
+      --bg:#0b0710; --bg2:#120c1c; --surface:#181022; --surface2:#1f1530;
+      --line:#2a1f3d; --violet:#a86bff; --violet-dim:#6f4bb0; --gold:#e0aa47;
+      --hot:#ff4d6d; --text:#efe9f7; --muted:#9a8fb0; --muted2:#6f6685;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text);
+      font-family:"Space Grotesk", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--gold); text-decoration:none; } a:hover{ color:#f2c463; }
+    .disp{ font-family:"Baloo 2", system-ui, sans-serif; letter-spacing:-0.01em; }
+    .mono{ font-family:"Space Mono", ui-monospace, monospace; }
+    .liquid{ position:absolute; z-index:0; pointer-events:none;
+      animation:drift 20s ease-in-out infinite; }
+    @keyframes drift{ 0%,100%{ transform:translate(0,0) rotate(0deg); } 33%{ transform:translate(8px,-12px) rotate(4deg); } 66%{ transform:translate(-6px,8px) rotate(-3deg); } }
+    .grain{ position:absolute; inset:0; width:100%; height:100%; z-index:2;
+      pointer-events:none; opacity:0.06; mix-blend-mode:overlay; }
+  </style>
+</head>
+<body>
+<div style="position:relative; width:390px; min-height:1620px; background:var(--bg); overflow:hidden;">
+
+  <!-- goo filter defs -->
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
+    <filter id="goo" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -12"/></filter>
+  </defs></svg>
+
+  <!-- grain -->
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+  <!-- liquid metaball forms -->
+  <svg class="liquid" style="top:-80px; right:-70px; width:330px; height:330px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.5"><circle cx="112" cy="84" r="46"/><circle cx="148" cy="112" r="34"/><circle cx="84" cy="120" r="30"/><circle cx="150" cy="64" r="22"/><circle cx="98" cy="58" r="20"/></g></svg>
+  <svg class="liquid" style="top:150px; left:-90px; width:300px; height:300px; animation-delay:-7s;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#e0aa47" opacity="0.26"><circle cx="90" cy="96" r="44"/><circle cx="124" cy="122" r="32"/><circle cx="70" cy="130" r="26"/><circle cx="120" cy="74" r="24"/></g></svg>
+  <svg class="liquid" style="top:40px; left:150px; width:150px; height:150px; animation-delay:-3s;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#ff4d6d" opacity="0.22"><circle cx="100" cy="90" r="40"/><circle cx="130" cy="115" r="26"/><circle cx="78" cy="118" r="22"/></g></svg>
+
+  <!-- flowing curve trails -->
+  <svg style="position:absolute; top:60px; left:-30px; width:470px; height:340px; z-index:1; pointer-events:none;" viewBox="0 0 470 340" fill="none">
+    <path d="M-20 150 C 120 60, 210 230, 350 140 C 430 88, 470 150, 450 250" stroke="#a86bff" stroke-width="1.6" opacity="0.4" stroke-linecap="round"/>
+    <path d="M-20 190 C 130 110, 220 270, 360 170 C 440 118, 480 180, 460 280" stroke="#e0aa47" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+  </svg>
+
+  <div style="position:relative; z-index:3;">
+
+  <!-- top bar -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 20px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="disp" style="font-weight:800; font-size:17px; letter-spacing:0.02em;">RAVERSGUILT</div>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 1.8 3-.2 1 2.8 2.4 1.7-.9 2.9.9 2.9-2.4 1.7-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8L3.2 14l.9-2.9-.9-2.9L5.6 6.4l1-2.8 3 .2L12 2z" fill="#a86bff"/><path d="M8.5 12.2l2.3 2.3 4.5-4.8" stroke="#0b0710" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#efe9f7" stroke-width="1.8"/><path d="M20 20l-3.2-3.2" stroke="#efe9f7" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#efe9f7" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <div style="padding:22px 20px 8px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><path d="M1 7 C 4 2, 7 2, 10 6 C 13 10, 16 10, 19 6 C 22 2, 24 4, 25 6" stroke="#e0aa47" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div class="mono" style="font-size:11px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase;">The Rave Jury · Est. Lagos</div>
+    </div>
+    <h1 class="disp" style="margin:14px 0 0; font-weight:800; font-size:44px; line-height:1.02;">
+      GUILTY<br>OF LOVING<br>THE <span style="position:relative; color:var(--violet);">RAVE<svg style="position:absolute; left:-4px; bottom:-14px; width:130px; height:20px;" viewBox="0 0 130 20" fill="none"><path d="M3 12 C 30 3, 55 3, 78 9 C 95 13, 112 8, 126 11" stroke="#e0aa47" stroke-width="3.4" stroke-linecap="round"/></svg></span>.
+    </h1>
+    <p style="margin:22px 0 0; font-size:15px; line-height:1.5; color:var(--muted); max-width:300px;">
+      The underground dance docket. We track every rave worth showing up to, hand down the verdict, and file it here — case by case, night by night.
+    </p>
+
+    <div style="display:flex; gap:10px; margin-top:22px;">
+      <a href="#" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:var(--violet); color:#0b0710; font-weight:700; font-size:14px; padding:14px 16px; border-radius:12px;">
+        See the calendar
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0b0710" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" style="display:flex; align-items:center; justify-content:center; padding:14px 16px; border-radius:12px; border:1px solid var(--line); color:var(--text); font-weight:600; font-size:14px;">Follow</a>
+    </div>
+  </div>
+
+  <!-- wavy divider -->
+  <div style="padding:22px 20px 4px;">
+    <svg width="100%" height="30" viewBox="0 0 350 30" preserveAspectRatio="none" fill="none"><path d="M0 18 C 30 6, 60 6, 90 16 C 120 26, 150 26, 180 16 C 210 6, 240 6, 270 16 C 300 26, 330 22, 350 14" stroke="#6f4bb0" stroke-width="2" stroke-linecap="round" opacity="0.8"/><path d="M0 22 C 30 12, 60 12, 90 20 C 120 30, 150 30, 180 20 C 210 10, 240 10, 270 20 C 300 30, 330 26, 350 18" stroke="#e0aa47" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+  </div>
+
+  <!-- verdict / next up card -->
+  <div style="padding:8px 20px 8px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:var(--muted2); text-transform:uppercase;">Next on the docket</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.14em; color:var(--gold);">CASE&nbsp;#0912</div>
+    </div>
+
+    <div style="position:relative; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:var(--surface);">
+      <!-- flat flyer placeholder with liquid accents -->
+      <div style="position:relative; height:210px; overflow:hidden; background:#150e28;">
+        <svg style="position:absolute; top:-20px; left:-30px; width:200px; height:200px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#ff4d6d" opacity="0.55"><circle cx="90" cy="90" r="40"/><circle cx="122" cy="116" r="28"/><circle cx="70" cy="120" r="24"/></g></svg>
+        <svg style="position:absolute; bottom:-40px; right:-20px; width:230px; height:230px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.7"><circle cx="110" cy="96" r="46"/><circle cx="140" cy="122" r="32"/><circle cx="84" cy="126" r="26"/><circle cx="140" cy="74" r="22"/></g></svg>
+        <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 360 210" fill="none" preserveAspectRatio="none"><path d="M-10 120 C 90 60, 150 170, 250 110 C 320 68, 370 120, 360 180" stroke="#efe9f7" stroke-width="1.2" opacity="0.22" stroke-linecap="round"/></svg>
+        <div style="position:absolute; top:14px; left:14px; display:flex; gap:6px;">
+          <span class="mono" style="font-size:10px; letter-spacing:0.12em; background:rgba(11,7,16,0.6); border:1px solid var(--violet-dim); color:var(--violet); padding:5px 9px; border-radius:999px;">303 GARAGE</span>
+        </div>
+        <div style="position:absolute; top:14px; right:14px; transform:rotate(9deg); border:2px solid var(--gold); color:var(--gold); font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:0.16em; padding:5px 8px; border-radius:6px;">GUILTY&nbsp;PICK</div>
+        <div class="mono" style="position:absolute; left:14px; bottom:12px; font-size:10px; letter-spacing:0.14em; color:rgba(239,233,247,0.5);">[ EVENT FLYER ]</div>
+      </div>
+
+      <div style="padding:18px;">
+        <h3 class="disp" style="margin:0; font-weight:800; font-size:24px; line-height:1.05;">Acid Church, Vol. II</h3>
+        <div style="display:flex; flex-direction:column; gap:9px; margin-top:14px;">
+          <div style="display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2.5" stroke="#a86bff" stroke-width="1.7"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="#a86bff" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span style="color:var(--text);">Fri 12 Sep</span> · 10PM – late
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" stroke="#a86bff" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="#a86bff" stroke-width="1.7"/></svg>
+            <span style="color:var(--text);">[Venue TBA]</span> · Lagos Mainland
+          </div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:18px;">
+          <a href="#" style="flex:1; text-align:center; background:var(--gold); color:#0b0710; font-weight:700; font-size:14px; padding:13px; border-radius:11px;">RSVP / Tickets</a>
+          <a href="#" style="display:flex; align-items:center; justify-content:center; width:48px; border-radius:11px; border:1px solid var(--line);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round"/><path d="M12 3v12M8 7l4-4 4 4" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- wavy divider -->
+  <div style="padding:24px 20px 4px;">
+    <svg width="100%" height="30" viewBox="0 0 350 30" preserveAspectRatio="none" fill="none"><path d="M0 18 C 30 6, 60 6, 90 16 C 120 26, 150 26, 180 16 C 210 6, 240 6, 270 16 C 300 26, 330 22, 350 14" stroke="#6f4bb0" stroke-width="2" stroke-linecap="round" opacity="0.8"/><path d="M0 22 C 30 12, 60 12, 90 20 C 120 30, 150 30, 180 20 C 210 10, 240 10, 270 20 C 300 30, 330 26, 350 18" stroke="#e0aa47" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+  </div>
+
+  <!-- this week -->
+  <div style="padding:6px 20px 8px;">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px;">
+      <h2 class="disp" style="margin:0; font-weight:700; font-size:20px;">This week</h2>
+      <a href="#" class="mono" style="font-size:11px; letter-spacing:0.14em; color:var(--muted);">FULL CALENDAR →</a>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 14px;">
+        <div style="text-align:center; min-width:44px;">
+          <div class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--gold);">TUE</div>
+          <div class="disp" style="font-weight:800; font-size:22px; line-height:1;">09</div>
+        </div>
+        <div style="width:1px; align-self:stretch; background:var(--line);"></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-weight:600; font-size:14px;">Off Duty — Taco Tuesday</div>
+          <div class="mono" style="font-size:11px; color:var(--muted); margin-top:3px; letter-spacing:0.04em;">[VENUE] · 8PM</div>
+        </div>
+        <span class="mono" style="font-size:9px; letter-spacing:0.1em; color:var(--violet); border:1px solid var(--violet-dim); padding:4px 7px; border-radius:999px;">OFF DUTY</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 14px;">
+        <div style="text-align:center; min-width:44px;">
+          <div class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--gold);">FRI</div>
+          <div class="disp" style="font-weight:800; font-size:22px; line-height:1;">12</div>
+        </div>
+        <div style="width:1px; align-self:stretch; background:var(--line);"></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-weight:600; font-size:14px;">Acid Church, Vol. II</div>
+          <div class="mono" style="font-size:11px; color:var(--muted); margin-top:3px; letter-spacing:0.04em;">[VENUE] · 10PM</div>
+        </div>
+        <span class="mono" style="font-size:9px; letter-spacing:0.1em; color:var(--violet); border:1px solid var(--violet-dim); padding:4px 7px; border-radius:999px;">303 GARAGE</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 14px;">
+        <div style="text-align:center; min-width:44px;">
+          <div class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--gold);">SAT</div>
+          <div class="disp" style="font-weight:800; font-size:22px; line-height:1;">13</div>
+        </div>
+        <div style="width:1px; align-self:stretch; background:var(--line);"></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-weight:600; font-size:14px;">Void House — Late Sermon</div>
+          <div class="mono" style="font-size:11px; color:var(--muted); margin-top:3px; letter-spacing:0.04em;">[VENUE] · 11PM</div>
+        </div>
+        <span class="mono" style="font-size:9px; letter-spacing:0.1em; color:var(--violet); border:1px solid var(--violet-dim); padding:4px 7px; border-radius:999px;">VOID HOUSE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- wavy divider -->
+  <div style="padding:24px 20px 4px;">
+    <svg width="100%" height="30" viewBox="0 0 350 30" preserveAspectRatio="none" fill="none"><path d="M0 18 C 30 6, 60 6, 90 16 C 120 26, 150 26, 180 16 C 210 6, 240 6, 270 16 C 300 26, 330 22, 350 14" stroke="#6f4bb0" stroke-width="2" stroke-linecap="round" opacity="0.8"/><path d="M0 22 C 30 12, 60 12, 90 20 C 120 30, 150 30, 180 20 C 210 10, 240 10, 270 20 C 300 30, 330 26, 350 18" stroke="#e0aa47" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+  </div>
+
+  <!-- series -->
+  <div style="padding:6px 20px 8px;">
+    <h2 class="disp" style="margin:0 0 14px; font-weight:700; font-size:20px;">The residencies</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:8px;">
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Group Therapy</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">303 Garage</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Void House</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Groove Station</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Healin&#39; in Saturn</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">House Arrest</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">RestlessAffairs</span>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="position:relative; margin-top:28px; padding:22px 20px 30px;">
+    <svg style="position:absolute; top:0; left:0; width:100%; height:22px;" viewBox="0 0 390 22" preserveAspectRatio="none" fill="none"><path d="M0 14 C 40 4, 80 4, 130 12 C 190 22, 250 22, 310 12 C 350 5, 380 9, 390 12" stroke="#2a1f3d" stroke-width="2" stroke-linecap="round"/></svg>
+    <div style="display:flex; align-items:center; justify-content:space-between; padding-top:12px;">
+      <div>
+        <div class="disp" style="font-weight:800; font-size:15px; letter-spacing:0.02em;">RAVERSGUILT</div>
+        <div class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--muted2); margin-top:4px;">they/them · the rave jury</div>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="#" aria-label="Instagram" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; border:1px solid var(--line);">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#efe9f7" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="#efe9f7" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#efe9f7"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; border:1px solid var(--line);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a3.5 3.5 0 11-3-3.46" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 3c.5 2.8 2.3 4.4 5 4.7" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raversguilt — Event detail (desktop)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    :root{
+      --bg:#0b0710; --bg2:#120c1c; --surface:#181022; --surface2:#1f1530;
+      --line:#2a1f3d; --violet:#a86bff; --violet-dim:#6f4bb0; --gold:#e0aa47;
+      --hot:#ff4d6d; --text:#efe9f7; --muted:#9a8fb0; --muted2:#6f6685;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text); font-family:"Space Grotesk", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--gold); text-decoration:none; } a:hover{ color:#f2c463; }
+    .disp{ font-family:"Baloo 2", system-ui, sans-serif; letter-spacing:-0.01em; }
+    .mono{ font-family:"Space Mono", ui-monospace, monospace; }
+    .grain{ position:absolute; inset:0; width:100%; height:100%; z-index:2; pointer-events:none; opacity:0.06; mix-blend-mode:overlay; }
+    .wrap{ max-width:1200px; margin:0 auto; padding:0 48px; }
+    .navlink{ font-size:15px; color:var(--muted); } .navlink:hover{ color:var(--text); }
+  </style>
+</head>
+<body>
+<div style="position:relative; width:1440px; min-height:1120px; background:var(--bg); overflow:hidden;">
+
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
+    <filter id="goo" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -12"/></filter>
+  </defs></svg>
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+  <div style="position:relative; z-index:3;">
+
+  <!-- nav -->
+  <div style="border-bottom:1px solid var(--line);">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; height:74px;">
+      <div style="display:flex; align-items:center; gap:9px;">
+        <div class="disp" style="font-weight:800; font-size:22px;">RAVERSGUILT</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 1.8 3-.2 1 2.8 2.4 1.7-.9 2.9.9 2.9-2.4 1.7-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8L3.2 14l.9-2.9-.9-2.9L5.6 6.4l1-2.8 3 .2L12 2z" fill="#a86bff"/><path d="M8.5 12.2l2.3 2.3 4.5-4.8" stroke="#0b0710" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="display:flex; align-items:center; gap:34px;">
+        <a href="#" class="navlink">Home</a>
+        <a href="#" class="navlink" style="color:var(--text); font-weight:600;">Calendar</a>
+        <a href="#" class="navlink">Gallery</a>
+        <a href="#" class="navlink">About</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:18px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#efe9f7" stroke-width="1.8"/><path d="M20 20l-3.2-3.2" stroke="#efe9f7" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <a href="#" style="background:var(--violet); color:#0b0710; font-weight:700; font-size:14px; padding:11px 20px; border-radius:11px;">Follow</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- breadcrumb -->
+  <div class="wrap" style="padding-top:22px;">
+    <a href="#" style="display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-size:13px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="#9a8fb0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to calendar</a>
+  </div>
+
+  <!-- two column -->
+  <div class="wrap" style="display:grid; grid-template-columns:520px 1fr; gap:48px; padding-top:20px;">
+
+    <!-- flyer column -->
+    <div>
+      <div style="position:relative; height:640px; border-radius:22px; overflow:hidden; background:#150e26;">
+        <svg style="position:absolute; top:-40px; left:-50px; width:340px; height:340px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#ff4d6d" opacity="0.5"><circle cx="94" cy="92" r="44"/><circle cx="126" cy="118" r="30"/><circle cx="72" cy="122" r="26"/><circle cx="128" cy="70" r="22"/></g></svg>
+        <svg style="position:absolute; bottom:-70px; right:-60px; width:400px; height:400px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.66"><circle cx="106" cy="98" r="48"/><circle cx="140" cy="124" r="32"/><circle cx="80" cy="128" r="26"/><circle cx="140" cy="72" r="24"/></g></svg>
+        <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 520 640" fill="none" preserveAspectRatio="none"><path d="M-20 320 C 140 200, 260 460, 380 320 C 470 214, 540 340, 520 500" stroke="#efe9f7" stroke-width="1.3" opacity="0.2" stroke-linecap="round"/><path d="M-20 380 C 150 270, 280 520, 400 380" stroke="#e0aa47" stroke-width="1.1" opacity="0.28" stroke-linecap="round"/></svg>
+        <div style="position:absolute; top:20px; right:20px; transform:rotate(9deg); border:2.5px solid var(--gold); color:var(--gold); font-family:'Space Mono',monospace; font-weight:700; font-size:13px; letter-spacing:0.18em; padding:7px 11px; border-radius:8px;">GUILTY PICK</div>
+        <div class="mono" style="position:absolute; left:20px; top:20px; font-size:10px; letter-spacing:0.16em; color:rgba(239,233,247,0.45);">[ EVENT FLYER — 4:5 ]</div>
+      </div>
+    </div>
+
+    <!-- content column -->
+    <div>
+      <span class="mono" style="display:inline-block; font-size:11px; letter-spacing:0.14em; color:var(--violet); border:1px solid var(--violet-dim); padding:6px 11px; border-radius:999px;">303 GARAGE · RESIDENCY</span>
+      <h1 class="disp" style="position:relative; margin:16px 0 0; font-weight:800; font-size:60px; line-height:1.0; display:inline-block;">Acid Church, Vol. II
+        <svg style="position:absolute; left:2px; bottom:-8px; width:280px; height:18px;" viewBox="0 0 280 18" fill="none"><path d="M4 11 C 70 4, 150 4, 210 9 C 240 12, 262 8, 276 10" stroke="#e0aa47" stroke-width="4" stroke-linecap="round"/></svg>
+      </h1>
+
+      <!-- meta -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:34px;">
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px;">
+          <div class="mono" style="font-size:9px; letter-spacing:0.16em; color:var(--muted2);">WHEN</div>
+          <div class="disp" style="font-weight:700; font-size:18px; margin-top:6px;">Fri 12 Sep</div>
+          <div style="font-size:13px; color:var(--muted); margin-top:2px;">10:00 PM – late</div>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px;">
+          <div class="mono" style="font-size:9px; letter-spacing:0.16em; color:var(--muted2);">WHERE</div>
+          <div class="disp" style="font-weight:700; font-size:18px; margin-top:6px;">[Venue TBA]</div>
+          <div style="font-size:13px; color:var(--muted); margin-top:2px;">Lagos Mainland</div>
+        </div>
+      </div>
+
+      <!-- RSVP box -->
+      <div style="display:flex; align-items:center; gap:16px; margin-top:14px; background:var(--surface); border:1px solid var(--violet-dim); border-radius:14px; padding:16px 18px;">
+        <div><div class="mono" style="font-size:10px; color:var(--muted2); letter-spacing:0.1em;">FROM</div><div class="disp" style="font-weight:800; font-size:22px;">₦[PRICE]</div></div>
+        <a href="#" style="flex:1; text-align:center; background:var(--gold); color:#0b0710; font-weight:700; font-size:15px; padding:15px; border-radius:12px;">RSVP / Get tickets</a>
+        <a href="#" style="display:flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:12px; border:1px solid var(--line);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round"/><path d="M12 3v12M8 7l4-4 4 4" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- verdict -->
+      <div style="margin-top:30px;">
+        <div style="display:flex; align-items:center; gap:8px;"><svg width="28" height="12" viewBox="0 0 26 12" fill="none"><path d="M1 7 C 4 2, 7 2, 10 6 C 13 10, 16 10, 19 6 C 22 2, 24 4, 25 6" stroke="#e0aa47" stroke-width="1.6" stroke-linecap="round"/></svg><div class="mono" style="font-size:11px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase;">The verdict</div></div>
+        <p style="margin:12px 0 0; font-size:16px; line-height:1.65; color:#d9d1e6; max-width:560px;">303 Garage returns for a second sermon of raw acid and warehouse house. Doors at ten, no dress code, no phones on the floor. Bring your worst decisions — we&#39;ll file them under &ldquo;guilty.&rdquo;</p>
+      </div>
+
+      <!-- lineup + getting there -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:30px;">
+        <div>
+          <h2 class="disp" style="margin:0 0 14px; font-weight:700; font-size:18px;">Line-up</h2>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:11px 13px;"><div style="width:42px; height:42px; border-radius:10px; background:#241640; border:1px solid #2f2050;"></div><div style="flex:1;"><div style="font-weight:600; font-size:14px;">[DJ NAME]</div><div class="mono" style="font-size:10px; color:var(--muted); letter-spacing:0.08em; margin-top:2px;">HEADLINE · 12–2AM</div></div><span class="mono" style="font-size:9px; color:var(--gold);">B2B</span></div>
+            <div style="display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:11px 13px;"><div style="width:42px; height:42px; border-radius:10px; background:#241640; border:1px solid #2f2050;"></div><div style="flex:1;"><div style="font-weight:600; font-size:14px;">[DJ NAME]</div><div class="mono" style="font-size:10px; color:var(--muted); letter-spacing:0.08em; margin-top:2px;">SUPPORT · 10–12</div></div></div>
+          </div>
+        </div>
+        <div>
+          <h2 class="disp" style="margin:0 0 14px; font-weight:700; font-size:18px;">Getting there</h2>
+          <div style="border:1px solid var(--line); border-radius:14px; overflow:hidden;">
+            <div style="height:120px; position:relative; background:#141024; background-image:linear-gradient(rgba(168,107,255,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(168,107,255,0.10) 1px, transparent 1px); background-size:24px 24px, 24px 24px;">
+              <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 300 120" fill="none" preserveAspectRatio="none"><path d="M-10 70 C 70 30, 130 100, 210 60 C 270 32, 310 70, 320 46" stroke="#a86bff" stroke-width="1.4" opacity="0.4" stroke-linecap="round"/></svg>
+              <svg style="position:absolute; top:50%; left:50%; transform:translate(-50%,-70%);" width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="#ff4d6d"/><circle cx="12" cy="10" r="2.6" fill="#0b0710"/></svg>
+            </div>
+            <div style="padding:13px 15px; display:flex; align-items:center; justify-content:space-between;"><div><div style="font-weight:600; font-size:12px;">[Venue address]</div><div class="mono" style="font-size:9px; color:var(--muted); margin-top:3px; letter-spacing:0.06em;">SHARED 24H BEFORE DOORS</div></div><a href="#" class="mono" style="font-size:11px; letter-spacing:0.1em; color:var(--gold);">MAP →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:50px;"></div>
+  </div>
+</div>
+</body>
+</html>

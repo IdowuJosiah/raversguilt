@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raversguilt — Gallery (desktop)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    :root{
+      --bg:#0b0710; --bg2:#120c1c; --surface:#181022; --surface2:#1f1530;
+      --line:#2a1f3d; --violet:#a86bff; --violet-dim:#6f4bb0; --gold:#e0aa47;
+      --hot:#ff4d6d; --text:#efe9f7; --muted:#9a8fb0; --muted2:#6f6685;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text); font-family:"Space Grotesk", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--gold); text-decoration:none; } a:hover{ color:#f2c463; }
+    .disp{ font-family:"Baloo 2", system-ui, sans-serif; letter-spacing:-0.01em; }
+    .mono{ font-family:"Space Mono", ui-monospace, monospace; }
+    .liquid{ position:absolute; z-index:0; pointer-events:none; animation:drift 22s ease-in-out infinite; }
+    @keyframes drift{ 0%,100%{ transform:translate(0,0) rotate(0deg); } 50%{ transform:translate(8px,-12px) rotate(3deg); } }
+    .grain{ position:absolute; inset:0; width:100%; height:100%; z-index:2; pointer-events:none; opacity:0.06; mix-blend-mode:overlay; }
+    .wrap{ max-width:1200px; margin:0 auto; padding:0 48px; }
+    .navlink{ font-size:15px; color:var(--muted); } .navlink:hover{ color:var(--text); }
+    .ph{ position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--line); display:flex; align-items:flex-end; }
+    .ph .tag{ position:relative; z-index:1; font-family:"Space Mono",monospace; font-size:10px; letter-spacing:0.1em; color:rgba(239,233,247,0.78); padding:11px 13px; }
+    .ph .wave{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+  </style>
+</head>
+<body>
+<div style="position:relative; width:1440px; min-height:1160px; background:var(--bg); overflow:hidden;">
+
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
+    <filter id="goo" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -12"/></filter>
+  </defs></svg>
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+  <svg class="liquid" style="top:-60px; left:-70px; width:420px; height:420px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#e0aa47" opacity="0.18"><circle cx="96" cy="94" r="42"/><circle cx="128" cy="120" r="30"/><circle cx="72" cy="124" r="24"/></g></svg>
+
+  <div style="position:relative; z-index:3;">
+
+  <!-- nav -->
+  <div style="border-bottom:1px solid var(--line);">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; height:74px;">
+      <div style="display:flex; align-items:center; gap:9px;">
+        <div class="disp" style="font-weight:800; font-size:22px;">RAVERSGUILT</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 1.8 3-.2 1 2.8 2.4 1.7-.9 2.9.9 2.9-2.4 1.7-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8L3.2 14l.9-2.9-.9-2.9L5.6 6.4l1-2.8 3 .2L12 2z" fill="#a86bff"/><path d="M8.5 12.2l2.3 2.3 4.5-4.8" stroke="#0b0710" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="display:flex; align-items:center; gap:34px;">
+        <a href="#" class="navlink">Home</a>
+        <a href="#" class="navlink">Calendar</a>
+        <a href="#" class="navlink" style="color:var(--text); font-weight:600;">Gallery</a>
+        <a href="#" class="navlink">About</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:18px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#efe9f7" stroke-width="1.8"/><path d="M20 20l-3.2-3.2" stroke="#efe9f7" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <a href="#" style="background:var(--violet); color:#0b0710; font-weight:700; font-size:14px; padding:11px 20px; border-radius:11px;">Follow</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- heading + filters -->
+  <div class="wrap" style="display:flex; align-items:flex-end; justify-content:space-between; padding-top:44px;">
+    <div>
+      <div class="mono" style="font-size:12px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase;">Exhibits</div>
+      <h1 class="disp" style="position:relative; margin:10px 0 0; font-weight:800; font-size:52px;">The evidence
+        <svg style="position:absolute; left:2px; bottom:-9px; width:230px; height:18px;" viewBox="0 0 230 18" fill="none"><path d="M4 11 C 52 4, 104 4, 150 9 C 180 12, 208 8, 226 10" stroke="#e0aa47" stroke-width="4" stroke-linecap="round" opacity="0.9"/></svg>
+      </h1>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <span style="font-size:13px; font-weight:600; color:#0b0710; background:var(--gold); padding:9px 15px; border-radius:999px;">All nights</span>
+      <span style="font-size:13px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 15px; border-radius:999px;">303 Garage</span>
+      <span style="font-size:13px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 15px; border-radius:999px;">Void House</span>
+      <span style="font-size:13px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 15px; border-radius:999px;">Group Therapy</span>
+    </div>
+  </div>
+
+  <!-- featured recap -->
+  <div class="wrap" style="padding-top:26px;">
+    <a href="#" style="display:block; border-radius:20px; overflow:hidden; border:1px solid var(--line); color:inherit;">
+      <div style="position:relative; height:340px; overflow:hidden; background:#160e26;">
+        <svg style="position:absolute; top:-50px; right:80px; width:360px; height:360px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#ff4d6d" opacity="0.44"><circle cx="100" cy="92" r="44"/><circle cx="134" cy="118" r="30"/><circle cx="76" cy="122" r="24"/></g></svg>
+        <svg style="position:absolute; bottom:-70px; left:60px; width:380px; height:380px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.56"><circle cx="100" cy="98" r="46"/><circle cx="134" cy="124" r="30"/><circle cx="76" cy="126" r="26"/><circle cx="136" cy="74" r="20"/></g></svg>
+        <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 1104 340" fill="none" preserveAspectRatio="none"><path d="M-20 190 C 240 90, 420 300, 660 190 C 860 100, 1000 200, 1120 150" stroke="#efe9f7" stroke-width="1.2" opacity="0.2" stroke-linecap="round"/></svg>
+        <div style="position:absolute; top:20px; left:20px; display:flex; align-items:center; gap:8px; background:rgba(11,7,16,0.55); padding:7px 12px; border-radius:999px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#ff4d6d"/></svg><span class="mono" style="font-size:10px; letter-spacing:0.1em; color:#efe9f7;">RECAP · 0:48</span></div>
+        <div style="position:absolute; left:24px; bottom:22px;">
+          <div class="mono" style="font-size:11px; letter-spacing:0.14em; color:var(--gold);">SAT 30 AUG · VOID HOUSE</div>
+          <div class="disp" style="font-weight:800; font-size:38px; margin-top:6px;">First Communion</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- grid -->
+  <div class="wrap" style="padding-top:26px;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:var(--muted2); text-transform:uppercase; margin-bottom:18px;">Recent exhibits</div>
+    <div style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); grid-auto-rows:180px; gap:16px;">
+      <div class="ph" style="grid-row:span 2; background:#20153a;"><svg class="wave" viewBox="0 0 260 380" fill="none" preserveAspectRatio="none"><path d="M-10 220 C 70 150, 130 300, 200 220 C 250 170, 280 220, 270 300" stroke="#a86bff" stroke-width="1.4" opacity="0.4" stroke-linecap="round"/><path d="M-10 270 C 70 210, 130 340, 200 260" stroke="#e0aa47" stroke-width="1" opacity="0.3" stroke-linecap="round"/></svg><span class="tag">303 GARAGE · #01</span></div>
+      <div class="ph" style="background:#2c1730;"><span class="tag">GROUP THERAPY</span></div>
+      <div class="ph" style="background:#181d38;"><span class="tag">GROOVE STATION</span></div>
+      <div class="ph" style="grid-row:span 2; background:#1e1640;"><svg class="wave" viewBox="0 0 260 380" fill="none" preserveAspectRatio="none"><path d="M-10 160 C 70 240, 130 90, 200 170 C 250 220, 280 160, 270 80" stroke="#e0aa47" stroke-width="1.4" opacity="0.35" stroke-linecap="round"/><path d="M-10 240 C 80 160, 130 320, 200 240" stroke="#a86bff" stroke-width="1" opacity="0.35" stroke-linecap="round"/></svg><span class="tag">HEALIN&#39; IN SATURN</span></div>
+      <div class="ph" style="background:#221636;"><span class="tag">OFF DUTY</span></div>
+      <div class="ph" style="background:#2a1834;"><span class="tag">VOID HOUSE</span></div>
+      <div class="ph" style="grid-row:span 2; background:#2a1732;"><svg class="wave" viewBox="0 0 260 380" fill="none" preserveAspectRatio="none"><path d="M-10 200 C 70 130, 130 280, 200 200 C 250 160, 280 210, 270 280" stroke="#ff4d6d" stroke-width="1.3" opacity="0.32" stroke-linecap="round"/></svg><span class="tag">HOUSE ARREST</span></div>
+      <div class="ph" style="background:#191c3a;"><span class="tag">RESTLESSAFFAIRS</span></div>
+      <div class="ph" style="background:#241a40;"><span class="tag">303 GARAGE · #02</span></div>
+      <div class="ph" style="background:#2c1834;"><span class="tag">VOID HOUSE · #02</span></div>
+    </div>
+  </div>
+
+  <!-- load more -->
+  <div class="wrap" style="padding-top:30px; padding-bottom:50px; display:flex; justify-content:center;">
+    <a href="#" style="display:inline-block; text-align:center; border:1px solid var(--line); color:var(--text); font-weight:600; font-size:14px; padding:14px 40px; border-radius:12px;">Load older nights</a>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raversguilt — About</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    :root{
+      --bg:#0b0710; --bg2:#120c1c; --surface:#181022; --surface2:#1f1530;
+      --line:#2a1f3d; --violet:#a86bff; --violet-dim:#6f4bb0; --gold:#e0aa47;
+      --hot:#ff4d6d; --text:#efe9f7; --muted:#9a8fb0; --muted2:#6f6685;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text);
+      font-family:"Space Grotesk", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--gold); text-decoration:none; } a:hover{ color:#f2c463; }
+    .disp{ font-family:"Baloo 2", system-ui, sans-serif; letter-spacing:-0.01em; }
+    .mono{ font-family:"Space Mono", ui-monospace, monospace; }
+    .liquid{ position:absolute; z-index:0; pointer-events:none;
+      animation:drift 23s ease-in-out infinite; }
+    @keyframes drift{ 0%,100%{ transform:translate(0,0) rotate(0deg); } 33%{ transform:translate(-8px,-11px) rotate(-3deg); } 66%{ transform:translate(7px,9px) rotate(4deg); } }
+    .grain{ position:absolute; inset:0; width:100%; height:100%; z-index:2;
+      pointer-events:none; opacity:0.06; mix-blend-mode:overlay; }
+  </style>
+</head>
+<body>
+<div style="position:relative; width:390px; min-height:1620px; background:var(--bg); overflow:hidden;">
+
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
+    <filter id="goo" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -12"/></filter>
+  </defs></svg>
+
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+  <!-- liquid metaball forms -->
+  <svg class="liquid" style="top:-40px; right:-70px; width:300px; height:300px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.42"><circle cx="110" cy="88" r="46"/><circle cx="144" cy="114" r="32"/><circle cx="84" cy="120" r="26"/><circle cx="146" cy="66" r="22"/></g></svg>
+  <svg class="liquid" style="top:160px; left:-80px; width:240px; height:240px; animation-delay:-9s;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#e0aa47" opacity="0.2"><circle cx="94" cy="96" r="42"/><circle cx="126" cy="122" r="30"/><circle cx="72" cy="126" r="24"/></g></svg>
+
+  <!-- flowing curve over hero -->
+  <svg style="position:absolute; top:70px; left:-30px; width:470px; height:300px; z-index:1; pointer-events:none;" viewBox="0 0 470 300" fill="none">
+    <path d="M-20 130 C 120 50, 210 200, 350 120 C 430 74, 470 130, 450 220" stroke="#a86bff" stroke-width="1.6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M-20 170 C 130 100, 220 240, 360 150 C 440 100, 480 160, 460 250" stroke="#e0aa47" stroke-width="1.2" opacity="0.25" stroke-linecap="round"/>
+  </svg>
+
+  <div style="position:relative; z-index:3;">
+
+  <!-- top bar -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid var(--line);">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="#efe9f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="disp" style="font-weight:800; font-size:17px;">About</div>
+    </div>
+    <span class="mono" style="font-size:11px; letter-spacing:0.14em; color:var(--gold);">THE FILE</span>
+  </div>
+
+  <!-- manifesto -->
+  <div style="padding:28px 20px 6px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><path d="M1 7 C 4 2, 7 2, 10 6 C 13 10, 16 10, 19 6 C 22 2, 24 4, 25 6" stroke="#e0aa47" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div class="mono" style="font-size:11px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase;">Case No. 001 · The Rave Jury</div>
+    </div>
+    <h1 class="disp" style="margin:16px 0 0; font-weight:800; font-size:40px; line-height:1;">We plead <span style="position:relative; color:var(--violet);">guilty<svg style="position:absolute; left:-2px; bottom:-12px; width:120px; height:18px;" viewBox="0 0 120 18" fill="none"><path d="M3 10 C 28 3, 56 3, 82 9 C 98 13, 110 8, 117 10" stroke="#e0aa47" stroke-width="3.2" stroke-linecap="round"/></svg></span>.</h1>
+    <p style="margin:22px 0 0; font-size:16px; line-height:1.6; color:#d9d1e6;">
+      Raversguilt is a Lagos collective and rave desk. We find the nights worth losing sleep over, put them on trial, and hand down a verdict — then bring you along. Part promoter, part jury, part getaway car.
+    </p>
+    <div style="display:flex; gap:10px; margin-top:18px;">
+      <span class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--violet); border:1px solid var(--violet-dim); padding:6px 11px; border-radius:999px;">they/them</span>
+      <span class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--muted); border:1px solid var(--line); padding:6px 11px; border-radius:999px;">Est. Lagos</span>
+      <span class="mono" style="font-size:10px; letter-spacing:0.1em; color:var(--muted); border:1px solid var(--line); padding:6px 11px; border-radius:999px;">777+ jurors</span>
+    </div>
+  </div>
+
+  <!-- wavy divider -->
+  <div style="padding:26px 20px 4px;">
+    <svg width="100%" height="30" viewBox="0 0 350 30" preserveAspectRatio="none" fill="none"><path d="M0 18 C 30 6, 60 6, 90 16 C 120 26, 150 26, 180 16 C 210 6, 240 6, 270 16 C 300 26, 330 22, 350 14" stroke="#6f4bb0" stroke-width="2" stroke-linecap="round" opacity="0.8"/><path d="M0 22 C 30 12, 60 12, 90 20 C 120 30, 150 30, 180 20 C 210 10, 240 10, 270 20 C 300 30, 330 26, 350 18" stroke="#e0aa47" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+  </div>
+
+  <!-- what we do -->
+  <div style="padding:6px 20px 6px;">
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><rect x="3.5" y="5" width="17" height="15" rx="2.5" stroke="#a86bff" stroke-width="1.7"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="#a86bff" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div>
+          <div class="disp" style="font-weight:700; font-size:16px;">We keep the docket</div>
+          <div style="font-size:13px; color:var(--muted); margin-top:4px; line-height:1.5;">A live calendar of every rave on our radar — with the details, before they sell out.</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M5 21V6a2 2 0 012-2h5l1.5 2H19a2 2 0 012 2v4" stroke="#e0aa47" stroke-width="1.7" stroke-linecap="round"/><path d="M5 21l2.5-8h15L20 21z" stroke="#e0aa47" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <div>
+          <div class="disp" style="font-weight:700; font-size:16px;">We hand down picks</div>
+          <div style="font-size:13px; color:var(--muted); margin-top:4px; line-height:1.5;">&ldquo;Guilty Picks&rdquo; — the nights the jury actually vouches for.</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><circle cx="9" cy="8" r="3" stroke="#ff4d6d" stroke-width="1.7"/><circle cx="16.5" cy="9.5" r="2.4" stroke="#ff4d6d" stroke-width="1.7"/><path d="M4 19a5 5 0 0110 0M14.5 19a4 4 0 015.5-3.7" stroke="#ff4d6d" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div>
+          <div class="disp" style="font-weight:700; font-size:16px;">We run the residencies</div>
+          <div style="font-size:13px; color:var(--muted); margin-top:4px; line-height:1.5;">Our own recurring nights — from 303 Garage to Void House.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- residencies -->
+  <div style="padding:26px 20px 6px;">
+    <h2 class="disp" style="margin:0 0 14px; font-weight:700; font-size:20px;">The residencies</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:8px;">
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Group Therapy</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">303 Garage</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Void House</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Groove Station</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Healin&#39; in Saturn</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">House Arrest</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">RestlessAffairs</span>
+      <span style="font-size:12px; color:var(--text); background:var(--surface2); border:1px solid var(--line); padding:9px 13px; border-radius:999px;">Off Duty</span>
+    </div>
+  </div>
+
+  <!-- submit an event -->
+  <div style="padding:26px 20px 6px;">
+    <div style="position:relative; overflow:hidden; border:1px solid var(--violet-dim); border-radius:18px; padding:20px; background:var(--surface);">
+      <svg style="position:absolute; top:-40px; right:-30px; width:190px; height:190px; z-index:0;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.4"><circle cx="104" cy="92" r="40"/><circle cx="134" cy="116" r="28"/><circle cx="78" cy="120" r="22"/></g></svg>
+      <div style="position:relative; z-index:1;">
+        <div class="disp" style="font-weight:800; font-size:20px;">Throwing a rave?</div>
+        <p style="margin:8px 0 0; font-size:14px; color:var(--muted); line-height:1.5;">Submit it to the jury. If it&#39;s good, it lands on the docket — and maybe becomes a Guilty Pick.</p>
+        <a href="#" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; background:var(--violet); color:#0b0710; font-weight:700; font-size:14px; padding:14px; border-radius:12px;">
+          Submit an event
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0b0710" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- mailing signup -->
+  <div style="padding:14px 20px 6px;">
+    <div style="border:1px solid var(--line); border-radius:18px; padding:20px; background:var(--surface);">
+      <div class="disp" style="font-weight:700; font-size:17px;">Get the weekly verdict</div>
+      <p style="margin:7px 0 0; font-size:13px; color:var(--muted); line-height:1.5;">Every Tuesday: the week&#39;s raves, straight to your inbox.</p>
+      <div style="display:flex; gap:8px; margin-top:14px;">
+        <div style="flex:1; display:flex; align-items:center; background:var(--bg); border:1px solid var(--line); border-radius:11px; padding:0 14px;">
+          <span class="mono" style="font-size:13px; color:var(--muted2);">you@email.com</span>
+        </div>
+        <a href="#" style="background:var(--gold); color:#0b0710; font-weight:700; font-size:13px; padding:13px 16px; border-radius:11px;">Join</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- socials -->
+  <div style="padding:26px 20px 6px;">
+    <div style="display:flex; gap:10px;">
+      <a href="#" style="flex:1; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px; color:inherit;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#efe9f7" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="#efe9f7" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#efe9f7"/></svg>
+        <div>
+          <div style="font-weight:600; font-size:13px;">Instagram</div>
+          <div class="mono" style="font-size:10px; color:var(--muted); margin-top:2px;">@raversguilt</div>
+        </div>
+      </a>
+      <a href="#" style="flex:1; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px; color:inherit;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a3.5 3.5 0 11-3-3.46" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 3c.5 2.8 2.3 4.4 5 4.7" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <div style="font-weight:600; font-size:13px;">TikTok</div>
+          <div class="mono" style="font-size:10px; color:var(--muted); margin-top:2px;">@raversguilt</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="position:relative; margin-top:22px; padding:24px 20px 32px; text-align:center;">
+    <svg style="position:absolute; top:0; left:0; width:100%; height:22px;" viewBox="0 0 390 22" preserveAspectRatio="none" fill="none"><path d="M0 14 C 40 4, 80 4, 130 12 C 190 22, 250 22, 310 12 C 350 5, 380 9, 390 12" stroke="#2a1f3d" stroke-width="2" stroke-linecap="round"/></svg>
+    <div style="padding-top:14px;">
+      <div class="disp" style="font-weight:800; font-size:16px; letter-spacing:0.02em;">RAVERSGUILT</div>
+      <div class="mono" style="font-size:10px; letter-spacing:0.12em; color:var(--muted2); margin-top:6px;">GUILTY OF LOVING THE RAVE · LAGOS</div>
+    </div>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

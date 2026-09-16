@@ -1,0 +1,129 @@
+.featured {
+  padding: 4px 20px 8px;
+}
+
+.featuredCard {
+  display: block;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.featuredImg {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #160e26;
+}
+
+.recapBadge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(11, 7, 16, 0.55);
+  padding: 5px 9px;
+  border-radius: var(--r-pill);
+}
+
+.recapLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.featuredMeta {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+}
+
+.featuredSeries {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.featuredTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.gridSection {
+  padding: 14px 20px 8px;
+}
+
+.gridLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.subColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loadMore {
+  padding: 18px 20px 30px;
+}
+
+.loadMoreBtn {
+  display: block;
+  text-align: center;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 14px;
+  border-radius: var(--r-md);
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  font-family: var(--font-body);
+}
+
+.loadMoreBtn:hover {
+  background: var(--surface);
+}
+
+.empty {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---- Desktop (>=900px): bigger featured + 4-col grid, strip side padding ---- */
+@media (min-width: 900px) {
+  /* page-outer already provides 60px side gutters — zero out module's own 20px */
+  .featured    { padding-left: 0; padding-right: 0; }
+  .gridSection { padding-left: 0; padding-right: 0; }
+  .loadMore    { padding-left: 0; padding-right: 0; display: flex; justify-content: center; }
+
+  .featuredImg  { height: 380px; }
+  .featuredTitle { font-size: 36px; }
+  .featuredSeries { font-size: 12px; }
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .loadMoreBtn { width: auto; padding: 14px 48px; }
+}

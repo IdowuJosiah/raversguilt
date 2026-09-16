@@ -1,0 +1,67 @@
+/* Raversguilt — design tokens
+ * Single source of truth for color, type, radius, spacing.
+ * Import once (e.g. in app/globals.css) and use the vars everywhere.
+ * Fonts are loaded from Google Fonts — see the <link> note in design-system.md.
+ */
+
+:root {
+  /* ---- Surfaces (dark, purple-toned) ---- */
+  --bg:        #0b0710;  /* page background */
+  --bg-2:      #120c1c;  /* raised background */
+  --surface:   #181022;  /* cards, rows */
+  --surface-2: #1f1530;  /* chips, insets */
+  --line:      #2a1f3d;  /* borders, dividers */
+
+  /* ---- Accents ---- */
+  --violet:     #a86bff; /* primary accent (interactive, highlights) */
+  --violet-dim: #6f4bb0; /* violet borders / muted violet */
+  --gold:       #e0aa47; /* secondary accent — "guilty verdict" / Guilty Picks */
+  --hot:        #ff4d6d; /* tertiary pop — sparingly (map pin, live dot) */
+
+  /* ---- Text ---- */
+  --text:   #efe9f7;     /* primary text */
+  --muted:  #9a8fb0;     /* secondary text */
+  --muted-2:#6f6685;     /* tertiary / labels */
+
+  /* ---- Flat "poster" fills for tiles/flyers (NO gradients) ---- */
+  --tile-303:      #20153a;
+  --tile-therapy:  #2c1730;
+  --tile-groove:   #181d38;
+  --tile-offduty:  #221636;
+  --tile-void:     #2a1834;
+  --tile-saturn:   #1e1640;
+  --tile-arrest:   #2a1732;
+  --tile-restless: #191c3a;
+  --flyer-base:    #150e28; /* flat base behind liquid blobs on flyers/heros */
+
+  /* ---- Radius ---- */
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 18px;
+  --r-pill: 999px;
+
+  /* ---- Type families ---- */
+  --font-display: "Baloo 2", system-ui, sans-serif;   /* bubbly headlines, titles, logo, day numbers */
+  --font-body:    "Space Grotesk", system-ui, sans-serif; /* body copy, buttons, labels */
+  --font-mono:    "Space Mono", ui-monospace, monospace;  /* docket labels: dates, tags, case #s (UPPERCASE, tracked) */
+
+  /* ---- Layout ---- */
+  --page-max: 480px; /* mobile-first; content column caps around here, centered on wider screens */
+}
+
+/* Base reset used by the mockups */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: #f2c463; }
+
+/* Helpers used throughout the mockups */
+.disp { font-family: var(--font-display); letter-spacing: -0.01em; }
+.mono { font-family: var(--font-mono); }

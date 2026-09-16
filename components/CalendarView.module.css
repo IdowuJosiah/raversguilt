@@ -1,0 +1,128 @@
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 12px;
+}
+
+.monthTitle {
+  position: relative;
+  margin: 0;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.monthYear {
+  color: var(--muted-2);
+  font-weight: 600;
+}
+
+.monthScribble {
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+}
+
+.navBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.navBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.navBtn:hover {
+  border-color: var(--violet-dim);
+  background: var(--surface);
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  padding: 16px 20px 4px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legendDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.agendaHeader {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.agenda {
+  padding: 8px 20px 8px;
+}
+
+.agendaList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---- Desktop (>=900px): month grid + agenda sidebar ---- */
+.calGrid {}
+.calLeft {}
+.calRight {}
+.mobileOnly {}
+
+@media (min-width: 900px) {
+  /* page-outer provides 60px side gutters — zero out every 20px module side padding */
+  .monthHeader { padding: 28px 0 14px; }
+  .agenda      { padding: 0; }
+  .legend      { padding: 16px 0 4px; }
+  .empty       { padding: 32px 0; }
+
+  .monthTitle { font-size: 50px; }
+
+  .calGrid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 32px;
+    align-items: start;
+    padding: 8px 0 0;
+  }
+  .calLeft  { min-width: 0; }
+  .calRight { padding: 0 !important; }
+  .calRight .agendaHeader { margin-top: 2px; }
+  .mobileOnly { display: none; }
+}

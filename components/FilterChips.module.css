@@ -1,0 +1,38 @@
+.list {
+  display: flex;
+  gap: 8px;
+  padding: 10px 20px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  font-size: 12px;
+  padding: 8px 13px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
+}
+
+.chipActive {
+  background: var(--gold);
+  color: #0b0710;
+  border-color: var(--gold);
+  font-weight: 600;
+}

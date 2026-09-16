@@ -1,0 +1,98 @@
+.grid {
+  padding: 0 20px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.weekday {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted-2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.weekdayWeekend {
+  color: var(--gold);
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.day {
+  aspect-ratio: 1;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s;
+}
+
+.day:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.dayHasEvent {
+  color: var(--text);
+}
+
+.daySelected {
+  background: var(--violet) !important;
+  color: #0b0710 !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--violet);
+}
+
+.dayEmpty {
+  background: transparent;
+  pointer-events: none;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+
+.dotViolet {
+  background: var(--violet);
+}
+
+.dotGold {
+  background: var(--gold);
+}
+
+.dotDark {
+  background: #0b0710;
+}
+
+/* ---- Desktop (>=900px): taller cells, top-aligned ---- */
+@media (min-width: 900px) {
+  .grid { padding: 0; }
+  .day {
+    aspect-ratio: auto;
+    min-height: 90px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 8px 0;
+    font-size: 14px;
+  }
+}

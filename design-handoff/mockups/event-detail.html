@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raversguilt — Event detail</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    :root{
+      --bg:#0b0710; --bg2:#120c1c; --surface:#181022; --surface2:#1f1530;
+      --line:#2a1f3d; --violet:#a86bff; --violet-dim:#6f4bb0; --gold:#e0aa47;
+      --hot:#ff4d6d; --text:#efe9f7; --muted:#9a8fb0; --muted2:#6f6685;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text);
+      font-family:"Space Grotesk", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--gold); text-decoration:none; } a:hover{ color:#f2c463; }
+    .disp{ font-family:"Baloo 2", system-ui, sans-serif; letter-spacing:-0.01em; }
+    .mono{ font-family:"Space Mono", ui-monospace, monospace; }
+    .grain{ position:absolute; inset:0; width:100%; height:100%; z-index:5;
+      pointer-events:none; opacity:0.05; mix-blend-mode:overlay; }
+  </style>
+</head>
+<body>
+<div style="position:relative; width:390px; min-height:1500px; background:var(--bg); overflow:hidden;">
+
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
+    <filter id="goo" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -12"/></filter>
+  </defs></svg>
+
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+  <!-- flyer hero -->
+  <div style="position:relative; height:420px; overflow:hidden; background:#150e26;">
+    <svg style="position:absolute; top:-40px; left:-40px; width:270px; height:270px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#ff4d6d" opacity="0.5"><circle cx="94" cy="92" r="44"/><circle cx="126" cy="118" r="30"/><circle cx="72" cy="122" r="26"/><circle cx="128" cy="70" r="22"/></g></svg>
+    <svg style="position:absolute; bottom:-60px; right:-50px; width:300px; height:300px;" viewBox="0 0 200 200" aria-hidden="true"><g filter="url(#goo)" fill="#a86bff" opacity="0.68"><circle cx="106" cy="98" r="48"/><circle cx="140" cy="124" r="32"/><circle cx="80" cy="128" r="26"/><circle cx="140" cy="72" r="24"/></g></svg>
+    <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 390 420" fill="none" preserveAspectRatio="none"><path d="M-20 210 C 100 130, 190 300, 300 210 C 370 155, 420 230, 400 330" stroke="#efe9f7" stroke-width="1.3" opacity="0.22" stroke-linecap="round"/><path d="M-20 250 C 110 180, 200 340, 320 250 C 390 200, 430 270, 410 360" stroke="#e0aa47" stroke-width="1.1" opacity="0.28" stroke-linecap="round"/></svg>
+
+    <div style="position:absolute; top:16px; left:16px; right:16px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="width:40px; height:40px; border-radius:11px; background:rgba(11,7,16,0.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="#efe9f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <div style="width:40px; height:40px; border-radius:11px; background:rgba(11,7,16,0.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round"/><path d="M12 3v12M8 7l4-4 4 4" stroke="#efe9f7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:absolute; top:74px; right:20px; transform:rotate(9deg); border:2.5px solid var(--gold); color:var(--gold); font-family:'Space Mono',monospace; font-weight:700; font-size:13px; letter-spacing:0.18em; padding:7px 11px; border-radius:8px;">GUILTY&nbsp;PICK</div>
+
+    <div class="mono" style="position:absolute; left:20px; top:196px; font-size:10px; letter-spacing:0.16em; color:rgba(239,233,247,0.4);">[ EVENT FLYER — 4:5 ]</div>
+
+    <div style="position:absolute; left:20px; right:20px; bottom:22px;">
+      <span class="mono" style="display:inline-block; font-size:10px; letter-spacing:0.14em; color:var(--violet); background:rgba(11,7,16,0.55); border:1px solid var(--violet-dim); padding:5px 9px; border-radius:999px;">303 GARAGE · RESIDENCY</span>
+      <h1 class="disp" style="position:relative; margin:12px 0 0; font-weight:800; font-size:36px; line-height:1.03;">Acid Church,<br>Vol. II
+        <svg style="position:absolute; left:2px; bottom:-12px; width:120px; height:16px;" viewBox="0 0 120 16" fill="none"><path d="M3 9 C 30 3, 58 3, 84 8 C 100 11, 112 7, 117 9" stroke="#e0aa47" stroke-width="3" stroke-linecap="round"/></svg>
+      </h1>
+    </div>
+  </div>
+
+  <!-- meta strip -->
+  <div style="position:relative; z-index:1; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1px; background:var(--line); border-bottom:1px solid var(--line);">
+    <div style="background:var(--bg); padding:16px 20px;">
+      <div class="mono" style="font-size:9px; letter-spacing:0.16em; color:var(--muted2);">WHEN</div>
+      <div class="disp" style="font-weight:700; font-size:16px; margin-top:6px;">Fri 12 Sep</div>
+      <div style="font-size:12px; color:var(--muted); margin-top:2px;">10:00 PM – late</div>
+    </div>
+    <div style="background:var(--bg); padding:16px 20px;">
+      <div class="mono" style="font-size:9px; letter-spacing:0.16em; color:var(--muted2);">WHERE</div>
+      <div class="disp" style="font-weight:700; font-size:16px; margin-top:6px;">[Venue TBA]</div>
+      <div style="font-size:12px; color:var(--muted); margin-top:2px;">Lagos Mainland</div>
+    </div>
+  </div>
+
+  <!-- description -->
+  <div style="position:relative; z-index:1; padding:24px 20px 4px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><path d="M1 7 C 4 2, 7 2, 10 6 C 13 10, 16 10, 19 6 C 22 2, 24 4, 25 6" stroke="#e0aa47" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase;">The verdict</div>
+    </div>
+    <p style="margin:12px 0 0; font-size:15px; line-height:1.6; color:#d9d1e6;">
+      303 Garage returns for a second sermon of raw acid and warehouse house. Doors at ten, no dress code, no phones on the floor. Bring your worst decisions — we&#39;ll file them under &ldquo;guilty.&rdquo;
+    </p>
+  </div>
+
+  <!-- wavy divider -->
+  <div style="position:relative; z-index:1; padding:22px 20px 4px;">
+    <svg width="100%" height="30" viewBox="0 0 350 30" preserveAspectRatio="none" fill="none"><path d="M0 18 C 30 6, 60 6, 90 16 C 120 26, 150 26, 180 16 C 210 6, 240 6, 270 16 C 300 26, 330 22, 350 14" stroke="#6f4bb0" stroke-width="2" stroke-linecap="round" opacity="0.8"/><path d="M0 22 C 30 12, 60 12, 90 20 C 120 30, 150 30, 180 20 C 210 10, 240 10, 270 20 C 300 30, 330 26, 350 18" stroke="#e0aa47" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+  </div>
+
+  <!-- lineup -->
+  <div style="position:relative; z-index:1; padding:6px 20px 4px;">
+    <h2 class="disp" style="margin:0 0 14px; font-weight:700; font-size:19px;">Line-up</h2>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:13px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:11px 14px;">
+        <div style="width:44px; height:44px; border-radius:10px; background:#241640; border:1px solid #2f2050; flex-shrink:0;"></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-weight:600; font-size:14px;">[DJ NAME]</div>
+          <div class="mono" style="font-size:10px; color:var(--muted); letter-spacing:0.08em; margin-top:2px;">HEADLINE · 12–2AM</div>
+        </div>
+        <span class="mono" style="font-size:9px; letter-spacing:0.1em; color:var(--gold);">B2B</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:13px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:11px 14px;">
+        <div style="width:44px; height:44px; border-radius:10px; background:#241640; border:1px solid #2f2050; flex-shrink:0;"></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-weight:600; font-size:14px;">[DJ NAME]</div>
+          <div class="mono" style="font-size:10px; color:var(--muted); letter-spacing:0.08em; margin-top:2px;">SUPPORT · 10–12</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- location card -->
+  <div style="position:relative; z-index:1; padding:26px 20px 4px;">
+    <h2 class="disp" style="margin:0 0 14px; font-weight:700; font-size:19px;">Getting there</h2>
+    <div style="border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+      <div style="height:140px; position:relative; background:#141024;
+          background-image:
+            linear-gradient(rgba(168,107,255,0.10) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(168,107,255,0.10) 1px, transparent 1px);
+          background-size:24px 24px, 24px 24px;">
+        <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 350 140" fill="none" preserveAspectRatio="none"><path d="M-10 90 C 80 40, 140 120, 220 75 C 290 38, 340 90, 360 60" stroke="#a86bff" stroke-width="1.4" opacity="0.4" stroke-linecap="round"/></svg>
+        <svg style="position:absolute; top:50%; left:50%; transform:translate(-50%,-70%);" width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="#ff4d6d"/><circle cx="12" cy="10" r="2.6" fill="#0b0710"/></svg>
+      </div>
+      <div style="padding:14px 16px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="font-weight:600; font-size:13px;">[Venue address]</div>
+          <div class="mono" style="font-size:10px; color:var(--muted); margin-top:3px; letter-spacing:0.06em;">SHARED 24H BEFORE DOORS</div>
+        </div>
+        <a href="#" class="mono" style="font-size:11px; letter-spacing:0.1em; color:var(--gold);">MAP →</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:96px;"></div>
+
+  <!-- sticky RSVP bar -->
+  <div style="position:sticky; bottom:0; z-index:3; background:linear-gradient(180deg, transparent, var(--bg) 26%); padding:14px 20px 20px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div>
+        <div class="mono" style="font-size:10px; color:var(--muted2); letter-spacing:0.1em;">FROM</div>
+        <div class="disp" style="font-weight:800; font-size:18px;">₦[PRICE]</div>
+      </div>
+      <a href="#" style="flex:1; text-align:center; background:var(--gold); color:#0b0710; font-weight:700; font-size:15px; padding:15px; border-radius:13px;">RSVP / Get tickets</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
