@@ -159,6 +159,48 @@
    Mobile styles above are untouched; these only apply on wide viewports.
    ============================================================ */
 
+/* Mobile bar */
+.rg-mobile-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 62px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+}
+
+.rg-mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.rg-mobile-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  flex-shrink: 0;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.rg-mobile-icon-btn:hover {
+  border-color: var(--violet-dim);
+  background: #1a1030;
+}
+
 /* Desktop nav hidden on mobile */
 .rg-desktop-nav { display: none; }
 

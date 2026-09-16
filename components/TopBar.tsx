@@ -92,23 +92,26 @@ export default function TopBar({
         </header>
       ) : (
         <header className="rg-mobile-bar">
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div className="disp" style={{ fontWeight: 800, fontSize: 17, letterSpacing: "0.02em", color: "var(--text)" }}>RAVERSGUILT</div>
+          {/* Left: hamburger */}
+          <button aria-label="Menu" className="rg-mobile-icon-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h10M4 17h16" stroke="var(--text)" strokeWidth="1.9" strokeLinecap="round" />
+            </svg>
+          </button>
+
+          {/* Center: logo */}
+          <Link href="/" className="rg-mobile-logo" aria-label="Raversguilt home">
+            <span className="disp" style={{ fontWeight: 800, fontSize: 17, letterSpacing: "0.02em" }}>RAVERSGUILT</span>
             <Tick />
           </Link>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <button aria-label="Search" style={{ background: "none", border: "none", cursor: "pointer", padding: 0, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 44, minHeight: 44 }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="11" cy="11" r="7" stroke="var(--text)" strokeWidth="1.8" />
-                <path d="M20 20l-3.2-3.2" stroke="var(--text)" strokeWidth="1.8" strokeLinecap="round" />
-              </svg>
-            </button>
-            <button aria-label="Menu" style={{ background: "none", border: "none", cursor: "pointer", padding: 0, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 44, minHeight: 44 }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="var(--text)" strokeWidth="1.8" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
+
+          {/* Right: search */}
+          <button aria-label="Search" className="rg-mobile-icon-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="var(--text)" strokeWidth="1.9" />
+              <path d="M20 20l-3.2-3.2" stroke="var(--text)" strokeWidth="1.9" strokeLinecap="round" />
+            </svg>
+          </button>
         </header>
       )}
     </>
