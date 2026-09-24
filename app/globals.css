@@ -148,6 +148,83 @@
 }
 .residency-chip:hover { border-color: var(--violet-dim); }
 
+/* ================================================================
+   SHOP PAGE
+   ================================================================ */
+
+.shop-header {
+  padding: 28px 20px 20px;
+}
+
+.shop-h1 {
+  margin: 10px 0 0;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 0.96;
+}
+
+.shop-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.shop-card {
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+.shop-card:hover { border-color: var(--violet-dim); }
+
+.shop-card-img {
+  position: relative;
+  height: 280px;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.shop-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--violet);
+  color: #0b0710;
+  font-weight: 700;
+}
+
+.shop-card-body {
+  padding: 18px 18px 0;
+}
+
+.shop-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 16px 0 18px;
+  border-top: 1px solid var(--line);
+}
+
+.shop-book-btn {
+  background: var(--gold);
+  color: #0b0710;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.18s;
+}
+.shop-book-btn:hover { opacity: 0.88; }
+
 /* ---- Focus ring ---- */
 :focus-visible {
   outline: 2px solid var(--violet);
@@ -299,6 +376,18 @@
 
   /* ---- Home: residencies heading ---- */
   .residencies-section h2 { font-size: 24px !important; }
+
+  /* ---- Shop page ---- */
+  .shop-header { padding: 40px 0 24px; }
+  .shop-h1 { font-size: 72px; }
+  .shop-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .shop-card-img { height: 260px; }
 
   /* ---- About page ---- */
   .about-manifesto { padding-top: 48px !important; }

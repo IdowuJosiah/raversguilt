@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "hollyland-solidcom-se-5pack",
+    "name": "Hollyland Solidcom SE",
+    "subtitle": "Full-Duplex Wireless Intercom — Set of 5",
+    "category": "Comms",
+    "imageUrl": "/gear/hollyland-solidcom-se.jpg",
+    "price": 50000,
+    "currency": "NGN",
+    "priceLabel": "₦50,000",
+    "unit": "set of 5",
+    "condition": "Hire",
+    "available": true,
+    "tags": ["crew", "production", "comms"],
+    "description": "Crystal-clear full-duplex wireless intercom for production crews. The Solidcom SE runs up to 5 headsets on a shared channel — no master station needed. Battery packs slot into the charging base between sessions. Ideal for event-night coordination across stage, bar, and door."
+  }
+]
