@@ -13,5 +13,20 @@
     "available": true,
     "tags": ["crew", "production", "comms"],
     "description": "Crystal-clear full-duplex wireless intercom for production crews. The Solidcom SE runs up to 5 headsets on a shared channel — no master station needed. Battery packs slot into the charging base between sessions. Ideal for event-night coordination across stage, bar, and door."
+  },
+  {
+    "slug": "sony-fx3-cinema-line",
+    "name": "Sony FX3",
+    "subtitle": "Cinema Line Full-Frame Camera Body",
+    "category": "Camera",
+    "imageUrl": "/gear/sony-fx3.jpg",
+    "price": null,
+    "currency": "NGN",
+    "priceLabel": "POA",
+    "unit": "per day",
+    "condition": "Hire",
+    "available": true,
+    "tags": ["video", "cinema", "production"],
+    "description": "Sony's Cinema Line FX3 — a full-frame sensor in a compact body built for run-and-gun shooting. 4K 120fps, S-Cinetone colour science, dual native ISO up to 12800. Perfect for recap films, live documentation, and anything where image quality can't be an afterthought."
   }
 ]
