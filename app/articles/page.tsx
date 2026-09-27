@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TopBar from "@/components/TopBar";
-import Footer from "@/components/Footer";
 import SeriesTag from "@/components/SeriesTag";
 import VerdictStamp from "@/components/VerdictStamp";
 import ScribbleUnderline from "@/components/ScribbleUnderline";
@@ -85,7 +84,6 @@ export default function ArticlesPage() {
           ))}
         </div>
 
-        <Footer />
       </div>
     </main>
   );

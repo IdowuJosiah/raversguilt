@@ -16,7 +16,6 @@ import ScribbleUnderline from "@/components/ScribbleUnderline";
 import SeriesTag from "@/components/SeriesTag";
 import VerdictStamp from "@/components/VerdictStamp";
 import MailingSignup from "@/components/MailingSignup";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Raversguilt",
@@ -614,7 +613,6 @@ export default function HomePage() {
           <MailingSignup />
         </div>
 
-        <Footer />
       </div>
     </main>
   );

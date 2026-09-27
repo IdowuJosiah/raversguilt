@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Baloo_2, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Grain from "@/components/Grain";
+import Footer from "@/components/Footer";
 
 const baloo2 = Baloo_2({
   variable: "--font-display",
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Grain />
 
         {children}
+        <Footer />
       </body>
     </html>
   );

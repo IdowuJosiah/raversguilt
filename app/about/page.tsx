@@ -375,49 +375,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Footer */}
-        <footer
-          style={{
-            position: "relative",
-            marginTop: 22,
-            padding: "24px 20px 32px",
-            textAlign: "center",
-          }}
-        >
-          <svg
-            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 22 }}
-            viewBox="0 0 390 22"
-            preserveAspectRatio="none"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M0 14 C 40 4, 80 4, 130 12 C 190 22, 250 22, 310 12 C 350 5, 380 9, 390 12"
-              stroke="var(--line)"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div style={{ paddingTop: 14 }}>
-            <div
-              className="disp"
-              style={{ fontWeight: 800, fontSize: 16, letterSpacing: "0.02em" }}
-            >
-              RAVERSGUILT
-            </div>
-            <div
-              className="mono"
-              style={{
-                fontSize: 10,
-                letterSpacing: "0.12em",
-                color: "var(--muted-2)",
-                marginTop: 6,
-              }}
-            >
-              GUILTY OF LOVING THE RAVE · LAGOS
-            </div>
-          </div>
-        </footer>
       </div>
     </main>
   );
