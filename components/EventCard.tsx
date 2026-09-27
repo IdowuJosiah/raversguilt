@@ -125,22 +125,8 @@ export default function EventCard({ event, caseNumber }: EventCardProps) {
           </ul>
 
           <div className={styles.actions}>
-            {event.ticketUrl ? (
-              <Link href={event.ticketUrl} target="_blank" rel="noopener noreferrer" className={styles.rsvpBtn}>
-                RSVP / Tickets
-              </Link>
-            ) : (
-              <span className={styles.rsvpBtn} style={{ opacity: 0.6 }}>RSVP / Tickets</span>
-            )}
-            <Link
-              href={`/events/${event.slug}`}
-              className={styles.shareBtn}
-              aria-label={`View ${event.title}`}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7" stroke="var(--text)" strokeWidth="1.7" strokeLinecap="round" />
-                <path d="M12 3v12M8 7l4-4 4 4" stroke="var(--text)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <Link href={`/events/${event.slug}`} className={styles.rsvpBtn}>
+              Case File →
             </Link>
           </div>
         </div>

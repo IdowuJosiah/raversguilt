@@ -292,21 +292,6 @@ export default function HomePage() {
                   )}
 
                   <div style={{ display: "flex", gap: 10, marginTop: 24 }}>
-                    {featured.ticketUrl ? (
-                      <a
-                        href={featured.ticketUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        style={{ display: "flex", alignItems: "center", gap: 8, background: "var(--gold)", color: "#0b0710", fontWeight: 700, fontSize: 13, padding: "13px 20px", borderRadius: "var(--r-md)", textDecoration: "none" }}
-                      >
-                        RSVP / Tickets
-                      </a>
-                    ) : (
-                      <span style={{ display: "flex", alignItems: "center", background: "var(--surface-2)", color: "var(--muted)", fontWeight: 600, fontSize: 13, padding: "13px 20px", borderRadius: "var(--r-md)", border: "1px solid var(--line)" }}>
-                        Tickets TBA
-                      </span>
-                    )}
                     <span style={{ display: "flex", alignItems: "center", gap: 6, color: "var(--violet)", fontWeight: 600, fontSize: 13 }}>
                       Full case file →
                     </span>

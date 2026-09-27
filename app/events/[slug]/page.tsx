@@ -11,7 +11,6 @@ import LiquidField from "@/components/LiquidField";
 import ScribbleUnderline from "@/components/ScribbleUnderline";
 import SeriesTag from "@/components/SeriesTag";
 import VerdictStamp from "@/components/VerdictStamp";
-import StickyRSVPBar from "@/components/StickyRSVPBar";
 import TopBar from "@/components/TopBar";
 import Link from "next/link";
 
@@ -49,7 +48,6 @@ export default async function EventDetailPage({ params }: Props) {
   return (
     <main
       className="page-outer"
-      style={{ paddingBottom: 96 /* space for sticky bar */ }}
     >
       {/* Shared goo filter already in layout */}
 
@@ -259,19 +257,6 @@ export default async function EventDetailPage({ params }: Props) {
           <span className="mono ev-section-title">Case File</span>
         </div>
 
-        {/* Desktop inline RSVP */}
-        <div className="event-rsvp-desktop">
-          <div>
-            <div className="mono" style={{ fontSize: 10, color: "var(--muted-2)", letterSpacing: "0.1em" }}>FROM</div>
-            <div className="disp" style={{ fontWeight: 800, fontSize: 22 }}>{event.priceLabel ?? "Free"}</div>
-          </div>
-          {event.ticketUrl ? (
-            <a href={event.ticketUrl} target="_blank" rel="noopener noreferrer" className="event-rsvp-btn">RSVP / Get tickets</a>
-          ) : (
-            <span className="event-rsvp-btn" style={{ opacity: 0.6 }}>RSVP / Get tickets</span>
-          )}
-        </div>
-
         {/* ---- The verdict ---- */}
         {event.description && (
           <section style={{ padding: "28px 20px 4px" }} aria-label="The verdict">
@@ -427,15 +412,9 @@ export default async function EventDetailPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Bottom spacer for sticky bar */}
-        <div style={{ height: 96 }} aria-hidden="true" />
+        <div style={{ height: 40 }} aria-hidden="true" />
         </div>{/* event-right */}
         </div>{/* event-grid */}
-      </div>
-
-      {/* ---- Sticky RSVP bar (mobile only) ---- */}
-      <div className="event-sticky">
-        <StickyRSVPBar priceLabel={event.priceLabel} ticketUrl={event.ticketUrl} />
       </div>
     </main>
   );
