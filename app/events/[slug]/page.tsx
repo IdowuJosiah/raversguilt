@@ -8,7 +8,6 @@ import {
   shouldRevealAddress,
 } from "@/lib/events";
 import LiquidField from "@/components/LiquidField";
-import WavyDivider from "@/components/WavyDivider";
 import ScribbleUnderline from "@/components/ScribbleUnderline";
 import SeriesTag from "@/components/SeriesTag";
 import VerdictStamp from "@/components/VerdictStamp";
@@ -253,6 +252,13 @@ export default async function EventDetailPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Section label: 01 — Case File */}
+        <div className="ev-section-label">
+          <span className="mono ev-section-num">01</span>
+          <span className="ev-section-rule" />
+          <span className="mono ev-section-title">Case File</span>
+        </div>
+
         {/* Desktop inline RSVP */}
         <div className="event-rsvp-desktop">
           <div>
@@ -268,29 +274,26 @@ export default async function EventDetailPage({ params }: Props) {
 
         {/* ---- The verdict ---- */}
         {event.description && (
-          <section style={{ padding: "24px 20px 4px" }} aria-label="The verdict">
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true">
-                <path d="M1 7 C 4 2, 7 2, 10 6 C 13 10, 16 10, 19 6 C 22 2, 24 4, 25 6" stroke="#e0aa47" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-              <span className="mono" style={{ fontSize: 11, letterSpacing: "0.2em", color: "var(--gold)", textTransform: "uppercase" }}>
-                The verdict
-              </span>
+          <section style={{ padding: "28px 20px 4px" }} aria-label="The verdict">
+            <div className="ev-section-label">
+              <span className="mono ev-section-num">02</span>
+              <span className="ev-section-rule" />
+              <span className="mono ev-section-title">The Verdict</span>
             </div>
-            <p style={{ margin: "12px 0 0", fontSize: 15, lineHeight: 1.6, color: "#d9d1e6" }}>
+            <blockquote className="ev-pullquote">
               {event.description}
-            </p>
+            </blockquote>
           </section>
         )}
 
-        <WavyDivider padding="22px 20px 4px" />
-
         {/* ---- Line-up ---- */}
         {event.lineup && event.lineup.length > 0 && (
-          <section style={{ padding: "6px 20px 4px" }} aria-label="Line-up">
-            <h2 className="disp" style={{ margin: "0 0 14px", fontWeight: 700, fontSize: 19 }}>
-              Line-up
-            </h2>
+          <section style={{ padding: "28px 20px 4px" }} aria-label="Line-up">
+            <div className="ev-section-label">
+              <span className="mono ev-section-num">03</span>
+              <span className="ev-section-rule" />
+              <span className="mono ev-section-title">Line-up</span>
+            </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {event.lineup.map((artist, i) => (
                 <div
@@ -337,10 +340,12 @@ export default async function EventDetailPage({ params }: Props) {
         )}
 
         {/* ---- Getting there ---- */}
-        <section style={{ padding: "26px 20px 4px" }} aria-label="Getting there">
-          <h2 className="disp" style={{ margin: "0 0 14px", fontWeight: 700, fontSize: 19 }}>
-            Getting there
-          </h2>
+        <section style={{ padding: "28px 20px 4px" }} aria-label="Getting there">
+          <div className="ev-section-label">
+            <span className="mono ev-section-num">04</span>
+            <span className="ev-section-rule" />
+            <span className="mono ev-section-title">Getting There</span>
+          </div>
           <div
             style={{
               border: "1px solid var(--line)",

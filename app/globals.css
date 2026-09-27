@@ -225,6 +225,61 @@
 }
 .shop-book-btn:hover { opacity: 0.88; }
 
+/* ================================================================
+   EVENT DETAIL — editorial section system (Blacknoise-inspired)
+   ================================================================ */
+
+.ev-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ev-section-num {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--muted-2);
+  flex-shrink: 0;
+}
+
+.ev-section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.ev-section-title {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Pull-quote verdict */
+.ev-pullquote {
+  margin: 0;
+  padding: 2px 0 2px 18px;
+  border-left: 2px solid var(--gold);
+  font-size: 19px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Running issue numbers on article cards */
+.article-issue-num {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(239,233,247,0.28);
+  font-weight: 700;
+  z-index: 2;
+}
+
 /* ---- Focus ring ---- */
 :focus-visible {
   outline: 2px solid var(--violet);
@@ -376,6 +431,12 @@
 
   /* ---- Home: residencies heading ---- */
   .residencies-section h2 { font-size: 24px !important; }
+
+  /* ---- Event detail editorial ---- */
+  .ev-pullquote { font-size: 22px; padding-left: 24px; }
+  .ev-section-num { font-size: 11px; }
+  .ev-section-title { font-size: 11px; }
+  .article-issue-num { font-size: 13px; }
 
   /* ---- Shop page ---- */
   .shop-header { padding: 40px 0 24px; }

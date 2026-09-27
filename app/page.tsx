@@ -355,6 +355,10 @@ export default function HomePage() {
                           className="article-card-visual"
                           style={{ background: tileColor }}
                         >
+                          {/* Running issue number */}
+                          <span className="article-issue-num mono">
+                            {String(articles.indexOf(event) + 1).padStart(2, "0")}
+                          </span>
                           <LiquidField
                             style={{ position: "absolute", top: -20, right: -20, width: 200, height: 200 }}
                             fill={blobs.c1}
