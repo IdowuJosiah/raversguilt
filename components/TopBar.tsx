@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type NavKey = "home" | "calendar" | "gallery" | "about" | "shop";
+type NavKey = "home" | "calendar" | "gallery" | "about" | "articles";
 
 interface TopBarProps {
   /** "home" renders logo + search/menu; "inner" renders back chevron + title + docket label (mobile only) */
@@ -17,7 +17,7 @@ const NAV: { key: NavKey; label: string; href: string }[] = [
   { key: "home", label: "Home", href: "/" },
   { key: "calendar", label: "Calendar", href: "/calendar" },
   { key: "gallery", label: "Gallery", href: "/gallery" },
-  { key: "shop", label: "Shop", href: "/shop" },
+  { key: "articles", label: "Articles", href: "/articles" },
   { key: "about", label: "About", href: "/about" },
 ];
 
