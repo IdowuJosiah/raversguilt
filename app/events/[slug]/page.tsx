@@ -29,16 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: event.title,
     description: event.description ?? `${event.series} · ${formatEventDate(event.startsAt)} · ${event.venueName}`,
-    openGraph: event.flyerUrl
-      ? { images: [{ url: event.flyerUrl }] }
-      : undefined,
+    openGraph: event.flyerUrl ? { images: [{ url: event.flyerUrl }] } : undefined,
   };
 }
 
 export default async function EventDetailPage({ params }: Props) {
   const { slug } = await params;
   const event = getEventBySlug(slug);
-
   if (!event) notFound();
 
   const revealAddress = shouldRevealAddress(event);
@@ -46,22 +43,39 @@ export default async function EventDetailPage({ params }: Props) {
   const timeLabel = getTimeLabel(event);
 
   return (
-    <main
-      className="page-outer"
-    >
-      {/* Shared goo filter already in layout */}
+    <main className="page-outer">
 
-      <div className="page-content">
-        {/* Desktop site nav; mobile shows back button */}
-        <TopBar variant="inner" title={event.series} docketLabel="CASE FILE" backHref="/calendar" active="calendar" />
+      {/* ══════════════════════════════════════════════════════
+          HERO — full-bleed split (text left · visual right)
+      ══════════════════════════════════════════════════════ */}
+      <div className="ev-hero">
 
-        <div className="event-grid">
-        <div className="event-left">
-        {/* ---- Flyer hero ---- */}
-        <section
-          className="event-flyer" style={{ position: "relative", height: 420, overflow: "hidden", background: "#150e26" }}
-          aria-label={`${event.title} flyer`}
-        >
+        {/* Left: headline content */}
+        <div className="ev-hero-body">
+          {/* Nav */}
+          <TopBar variant="inner" title={event.series} docketLabel="CASE FILE" backHref="/articles" active="articles" />
+
+          <div className="ev-hero-content">
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+              <SeriesTag series={event.series} />
+              {event.guiltyPick && <VerdictStamp />}
+            </div>
+
+            <h1 className="disp ev-hero-title">
+              {event.title}
+              <ScribbleUnderline width={140} />
+            </h1>
+
+            <div className="ev-hero-meta mono">
+              <time dateTime={event.startsAt}>{dateLabel}</time>
+              {" · "}{timeLabel}
+              {" · "}{event.venueName !== "[Venue TBA]" ? event.venueName : event.area ?? "Lagos"}
+            </div>
+          </div>
+        </div>
+
+        {/* Right: visual */}
+        <div className="ev-hero-visual" style={{ background: "#150e26" }}>
           {event.flyerUrl ? (
             <img
               src={event.flyerUrl}
@@ -71,240 +85,113 @@ export default async function EventDetailPage({ params }: Props) {
           ) : (
             <>
               <LiquidField
-                style={{ position: "absolute", top: -40, left: -40, width: 270, height: 270 }}
+                style={{ position: "absolute", top: -40, left: -40, width: 340, height: 340 }}
                 fill="#ff4d6d"
                 opacity={0.5}
                 circles={[
-                  { cx: 94, cy: 92, r: 44 },
-                  { cx: 126, cy: 118, r: 30 },
-                  { cx: 72, cy: 122, r: 26 },
-                  { cx: 128, cy: 70, r: 22 },
+                  { cx: 120, cy: 116, r: 56 },
+                  { cx: 158, cy: 150, r: 38 },
+                  { cx: 90, cy: 154, r: 30 },
+                  { cx: 160, cy: 88, r: 26 },
                 ]}
               />
               <LiquidField
-                style={{ position: "absolute", bottom: -60, right: -50, width: 300, height: 300 }}
+                style={{ position: "absolute", bottom: -60, right: -50, width: 380, height: 380 }}
                 fill="#a86bff"
                 opacity={0.68}
                 circles={[
-                  { cx: 106, cy: 98, r: 48 },
-                  { cx: 140, cy: 124, r: 32 },
-                  { cx: 80, cy: 128, r: 26 },
-                  { cx: 140, cy: 72, r: 24 },
+                  { cx: 140, cy: 126, r: 60 },
+                  { cx: 178, cy: 158, r: 40 },
+                  { cx: 104, cy: 160, r: 32 },
+                  { cx: 178, cy: 92, r: 28 },
                 ]}
               />
-              {/* Curve trails */}
               <svg
                 style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-                viewBox="0 0 390 420"
+                viewBox="0 0 560 600"
                 fill="none"
-                preserveAspectRatio="none"
+                preserveAspectRatio="xMidYMid slice"
                 aria-hidden="true"
               >
-                <path
-                  d="M-20 210 C 100 130, 190 300, 300 210 C 370 155, 420 230, 400 330"
-                  stroke="var(--text)"
-                  strokeWidth="1.3"
-                  opacity="0.22"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M-20 250 C 110 180, 200 340, 320 250 C 390 200, 430 270, 410 360"
-                  stroke="var(--gold)"
-                  strokeWidth="1.1"
-                  opacity="0.28"
-                  strokeLinecap="round"
-                />
+                <path d="M-20 300 C 120 160, 260 440, 420 280 C 510 200, 570 320, 560 500"
+                  stroke="var(--text)" strokeWidth="1.4" opacity="0.18" strokeLinecap="round" />
+                <path d="M60 -20 C 40 180, 280 340, 200 600"
+                  stroke="var(--gold)" strokeWidth="1" opacity="0.22" strokeLinecap="round" />
               </svg>
-              <div
-                className="mono"
-                style={{
-                  position: "absolute",
-                  left: 20,
-                  top: 196,
-                  fontSize: 10,
-                  letterSpacing: "0.16em",
-                  color: "rgba(239,233,247,0.4)",
-                }}
-              >
+              <div className="mono" style={{
+                position: "absolute", left: 24, top: "50%", transform: "translateY(-50%)",
+                fontSize: 10, letterSpacing: "0.16em", color: "rgba(239,233,247,0.3)",
+              }}>
                 [ EVENT FLYER — 4:5 ]
               </div>
             </>
           )}
+        </div>
+      </div>
 
-          {/* Hero controls */}
-          <div
-            style={{
-              position: "absolute",
-              top: 16,
-              left: 16,
-              right: 16,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Link
-              href="/calendar"
-              aria-label="Back to calendar"
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 11,
-                background: "rgba(11,7,16,0.55)",
-                backdropFilter: "blur(4px)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M15 5l-7 7 7 7" stroke="var(--text)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-            <div style={{ display: "flex", gap: 10 }}>
-              <a
-                href={`/events/${event.slug}`}
-                aria-label="Share event"
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 11,
-                  background: "rgba(11,7,16,0.55)",
-                  backdropFilter: "blur(4px)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7" stroke="var(--text)" strokeWidth="1.7" strokeLinecap="round" />
-                  <path d="M12 3v12M8 7l4-4 4 4" stroke="var(--text)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-            </div>
-          </div>
+      {/* ══════════════════════════════════════════════════════
+          ARTICLE BODY — narrow reading column
+      ══════════════════════════════════════════════════════ */}
+      <div className="ev-body">
 
-          {/* Guilty Pick stamp */}
-          {event.guiltyPick && (
-            <div style={{ position: "absolute", top: 74, right: 20 }}>
-              <VerdictStamp />
-            </div>
-          )}
+        {/* Byline strip */}
+        <div className="ev-byline mono">
+          COVERED BY RAVERSGUILT · {new Date(event.startsAt).getFullYear()}
+        </div>
 
-          {/* Series + title overlay */}
-          <div style={{ position: "absolute", left: 20, right: 20, bottom: 22 }}>
-            <SeriesTag series={event.series} />
-            <h1
-              className="disp event-title"
-              style={{
-                position: "relative",
-                margin: "12px 0 0",
-                fontWeight: 800,
-                fontSize: 36,
-                lineHeight: 1.03,
-              }}
-            >
-              {event.title}
-              <ScribbleUnderline width={120} />
-            </h1>
-          </div>
-        </section>
-
-        </div>{/* event-left */}
-        <div className="event-right">
-        {/* ---- Meta strip ---- */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-            gap: 1,
-            background: "var(--line)",
-            borderBottom: "1px solid var(--line)",
-          }}
-          role="list"
-          aria-label="Event details"
-        >
-          <div style={{ background: "var(--bg)", padding: "16px 20px" }} role="listitem">
-            <div className="mono" style={{ fontSize: 9, letterSpacing: "0.16em", color: "var(--muted-2)" }}>
-              WHEN
-            </div>
-            <div className="disp" style={{ fontWeight: 700, fontSize: 16, marginTop: 6 }}>
+        {/* Meta row — WHEN / WHERE */}
+        <div className="ev-meta-row" role="list" aria-label="Event details">
+          <div role="listitem">
+            <div className="mono" style={{ fontSize: 9, letterSpacing: "0.18em", color: "var(--muted-2)", marginBottom: 6 }}>WHEN</div>
+            <div className="disp" style={{ fontWeight: 700, fontSize: 17 }}>
               <time dateTime={event.startsAt}>{dateLabel}</time>
             </div>
-            <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>
-              {timeLabel}
-            </div>
+            <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>{timeLabel}</div>
           </div>
-          <div style={{ background: "var(--bg)", padding: "16px 20px" }} role="listitem">
-            <div className="mono" style={{ fontSize: 9, letterSpacing: "0.16em", color: "var(--muted-2)" }}>
-              WHERE
-            </div>
-            <div className="disp" style={{ fontWeight: 700, fontSize: 16, marginTop: 6 }}>
-              {event.venueName}
-            </div>
-            {event.area && (
-              <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>
-                {event.area}
+          <div className="ev-meta-divider" aria-hidden="true" />
+          <div role="listitem">
+            <div className="mono" style={{ fontSize: 9, letterSpacing: "0.18em", color: "var(--muted-2)", marginBottom: 6 }}>WHERE</div>
+            <div className="disp" style={{ fontWeight: 700, fontSize: 17 }}>{event.venueName}</div>
+            {event.area && <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>{event.area}</div>}
+          </div>
+          {event.priceLabel && (
+            <>
+              <div className="ev-meta-divider" aria-hidden="true" />
+              <div role="listitem">
+                <div className="mono" style={{ fontSize: 9, letterSpacing: "0.18em", color: "var(--muted-2)", marginBottom: 6 }}>FROM</div>
+                <div className="disp" style={{ fontWeight: 700, fontSize: 17 }}>{event.priceLabel}</div>
               </div>
-            )}
-          </div>
+            </>
+          )}
         </div>
 
-        {/* Section label: 01 — Case File */}
-        <div className="ev-section-label">
-          <span className="mono ev-section-num">01</span>
-          <span className="ev-section-rule" />
-          <span className="mono ev-section-title">Case File</span>
-        </div>
-
-        {/* ---- The verdict ---- */}
+        {/* 01 — The Verdict */}
         {event.description && (
-          <section style={{ padding: "28px 20px 4px" }} aria-label="The verdict">
-            <div className="ev-section-label">
-              <span className="mono ev-section-num">02</span>
+          <section aria-label="The verdict">
+            <div className="ev-section-label" style={{ marginTop: 40 }}>
+              <span className="mono ev-section-num">01</span>
               <span className="ev-section-rule" />
               <span className="mono ev-section-title">The Verdict</span>
             </div>
-            <blockquote className="ev-pullquote">
-              {event.description}
-            </blockquote>
+            <blockquote className="ev-pullquote">{event.description}</blockquote>
           </section>
         )}
 
-        {/* ---- Line-up ---- */}
+        {/* 02 — Line-up */}
         {event.lineup && event.lineup.length > 0 && (
-          <section style={{ padding: "28px 20px 4px" }} aria-label="Line-up">
-            <div className="ev-section-label">
-              <span className="mono ev-section-num">03</span>
+          <section aria-label="Line-up">
+            <div className="ev-section-label" style={{ marginTop: 44 }}>
+              <span className="mono ev-section-num">02</span>
               <span className="ev-section-rule" />
               <span className="mono ev-section-title">Line-up</span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {event.lineup.map((artist, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 13,
-                    background: "var(--surface)",
-                    border: "1px solid var(--line)",
-                    borderRadius: 14,
-                    padding: "11px 14px",
-                  }}
-                >
-                  {/* Avatar placeholder */}
-                  <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
-                      background: "#241640",
-                      border: "1px solid #2f2050",
-                      flexShrink: 0,
-                    }}
-                    aria-hidden="true"
-                  />
+                <div key={i} className="ev-lineup-row">
+                  <div style={{
+                    width: 44, height: 44, borderRadius: 10,
+                    background: "#241640", border: "1px solid #2f2050", flexShrink: 0,
+                  }} aria-hidden="true" />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontWeight: 600, fontSize: 14 }}>{artist.name}</div>
                     {artist.role && (
@@ -314,9 +201,7 @@ export default async function EventDetailPage({ params }: Props) {
                     )}
                   </div>
                   {artist.b2b && (
-                    <span className="mono" style={{ fontSize: 9, letterSpacing: "0.1em", color: "var(--gold)" }}>
-                      B2B
-                    </span>
+                    <span className="mono" style={{ fontSize: 9, letterSpacing: "0.1em", color: "var(--gold)" }}>B2B</span>
                   )}
                 </div>
               ))}
@@ -324,87 +209,43 @@ export default async function EventDetailPage({ params }: Props) {
           </section>
         )}
 
-        {/* ---- Getting there ---- */}
-        <section style={{ padding: "28px 20px 4px" }} aria-label="Getting there">
-          <div className="ev-section-label">
-            <span className="mono ev-section-num">04</span>
+        {/* 03 — Getting There */}
+        <section aria-label="Getting there">
+          <div className="ev-section-label" style={{ marginTop: 44 }}>
+            <span className="mono ev-section-num">{event.lineup && event.lineup.length > 0 ? "03" : "02"}</span>
             <span className="ev-section-rule" />
             <span className="mono ev-section-title">Getting There</span>
           </div>
-          <div
-            style={{
-              border: "1px solid var(--line)",
-              borderRadius: "var(--r-lg)",
-              overflow: "hidden",
-            }}
-          >
-            {/* Map placeholder with grid pattern */}
-            <div
-              style={{
-                height: 140,
-                position: "relative",
-                background: "#141024",
-                backgroundImage:
-                  "linear-gradient(rgba(168,107,255,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(168,107,255,0.10) 1px, transparent 1px)",
-                backgroundSize: "24px 24px, 24px 24px",
-              }}
-              aria-hidden="true"
-            >
-              <svg
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-                viewBox="0 0 350 140"
-                fill="none"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M-10 90 C 80 40, 140 120, 220 75 C 290 38, 340 90, 360 60"
-                  stroke="var(--violet)"
-                  strokeWidth="1.4"
-                  opacity="0.4"
-                  strokeLinecap="round"
-                />
+          <div style={{ border: "1px solid var(--line)", borderRadius: "var(--r-lg)", overflow: "hidden" }}>
+            {/* Map placeholder */}
+            <div style={{
+              height: 160, position: "relative", background: "#141024",
+              backgroundImage: "linear-gradient(rgba(168,107,255,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(168,107,255,0.10) 1px, transparent 1px)",
+              backgroundSize: "24px 24px, 24px 24px",
+            }} aria-hidden="true">
+              <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+                viewBox="0 0 640 160" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M-10 100 C 100 48, 200 130, 340 84 C 460 44, 560 108, 650 70"
+                  stroke="var(--violet)" strokeWidth="1.4" opacity="0.4" strokeLinecap="round" />
               </svg>
-              {/* Map pin */}
-              <svg
-                style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -70%)" }}
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
+              <svg style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -70%)" }}
+                width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="var(--hot)" />
                 <circle cx="12" cy="10" r="2.6" fill="#0b0710" />
               </svg>
             </div>
-
-            <div
-              style={{
-                padding: "14px 16px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
+            <div style={{ padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 13 }}>
-                  {revealAddress && event.address
-                    ? event.address
-                    : "[Venue address]"}
+                  {revealAddress && event.address ? event.address : "[Venue address]"}
                 </div>
                 <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 3, letterSpacing: "0.06em" }}>
                   {revealAddress ? "ADDRESS CONFIRMED" : "SHARED 24H BEFORE DOORS"}
                 </div>
               </div>
               {event.mapUrl && revealAddress && (
-                <a
-                  href={event.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mono"
-                  style={{ fontSize: 11, letterSpacing: "0.1em", color: "var(--gold)" }}
-                >
+                <a href={event.mapUrl} target="_blank" rel="noopener noreferrer"
+                  className="mono" style={{ fontSize: 11, letterSpacing: "0.1em", color: "var(--gold)" }}>
                   MAP →
                 </a>
               )}
@@ -412,10 +253,14 @@ export default async function EventDetailPage({ params }: Props) {
           </div>
         </section>
 
-        <div style={{ height: 40 }} aria-hidden="true" />
-        </div>{/* event-right */}
-        </div>{/* event-grid */}
+        {/* Back link */}
+        <div style={{ marginTop: 52, paddingBottom: 20 }}>
+          <Link href="/articles" className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--muted)", textDecoration: "none" }}>
+            ← Back to all case files
+          </Link>
+        </div>
       </div>
+
     </main>
   );
 }

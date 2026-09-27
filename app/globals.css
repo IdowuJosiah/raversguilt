@@ -514,6 +514,91 @@
   color: var(--text);
 }
 
+/* ── Hero — full-bleed split (mobile: stacked, desktop: side-by-side) ── */
+.ev-hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.ev-hero-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ev-hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 20px 28px;
+  gap: 10px;
+}
+
+.ev-hero-title {
+  font-size: 36px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 6px 0 0;
+}
+
+.ev-hero-meta {
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.ev-hero-visual {
+  position: relative;
+  overflow: hidden;
+  height: 52vw;
+  min-height: 220px;
+  order: -1;
+}
+
+/* ── Article body ── */
+.ev-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.ev-byline {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--muted-2);
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ev-meta-row {
+  display: flex;
+  gap: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ev-meta-divider {
+  width: 1px;
+  background: var(--line);
+  margin: 0 20px;
+  align-self: stretch;
+}
+
+.ev-lineup-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+
 /* Running issue numbers on article cards */
 .article-issue-num {
   position: absolute;
@@ -722,6 +807,33 @@
   .ev-section-num { font-size: 11px; }
   .ev-section-title { font-size: 11px; }
   .article-issue-num { font-size: 13px; }
+
+  /* ---- Event hero (Blacknoise split) ---- */
+  .ev-hero {
+    flex-direction: row;
+    min-height: 100svh;
+    max-height: 100svh;
+  }
+  .ev-hero-body {
+    flex: 0 0 42%;
+    overflow: hidden;
+  }
+  .ev-hero-visual {
+    flex: 1;
+    height: auto;
+    min-height: unset;
+    order: 0;
+  }
+  .ev-hero-content {
+    padding: 36px 48px 48px;
+  }
+  .ev-hero-title {
+    font-size: 58px;
+  }
+  .ev-body {
+    padding: 0 0 60px;
+    margin: 0 auto;
+  }
 
   /* ---- Shop page ---- */
   .shop-header { padding: 40px 0 24px; }
