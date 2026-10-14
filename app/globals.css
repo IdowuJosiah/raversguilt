@@ -611,6 +611,154 @@
   z-index: 2;
 }
 
+/* ================================================================
+   VIDEOS PAGE
+   ================================================================ */
+
+/* Featured card */
+.vid-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s;
+}
+.vid-featured:hover { border-color: var(--violet); }
+
+.vid-featured-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #141024;
+}
+
+.vid-featured-body {
+  padding: 4px 16px 18px;
+}
+
+/* Section header (divider + label) */
+.vid-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 16px;
+}
+
+/* Grid */
+.vid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Grid card */
+.vid-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s;
+}
+.vid-card:hover { border-color: var(--violet); }
+
+.vid-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 11;
+  overflow: hidden;
+  background: #141024;
+}
+
+.vid-body {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.vid-card-title {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Play button overlay (shared) */
+.vid-play-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(168,107,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.14s, background 0.14s;
+}
+.vid-featured:hover .vid-play-btn,
+.vid-card:hover .vid-play-btn,
+.home-watch-card:hover .vid-play-btn {
+  transform: scale(1.1);
+  background: var(--violet);
+}
+
+/* ================================================================
+   HOME PAGE — Watch strip
+   ================================================================ */
+
+.home-watch-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.home-watch-strip::-webkit-scrollbar { display: none; }
+
+.home-watch-card {
+  flex: 0 0 160px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-watch-thumb {
+  position: relative;
+  width: 160px;
+  height: 200px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #141024;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.home-watch-title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* ---- Focus ring ---- */
 :focus-visible {
   outline: 2px solid var(--violet);
@@ -834,6 +982,36 @@
     padding: 0 0 60px;
     margin: 0 auto;
   }
+
+  /* ---- Videos page ---- */
+  .vid-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .vid-featured {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .vid-featured-thumb {
+    flex: 0 0 52%;
+    aspect-ratio: unset;
+    min-height: 280px;
+  }
+  .vid-featured-body {
+    flex: 1;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Home watch strip → row of 3 (no scroll) */
+  .home-watch-strip {
+    overflow-x: visible;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .home-watch-card { flex: unset; }
+  .home-watch-thumb { width: 100%; }
 
   /* ---- Shop page ---- */
   .shop-header { padding: 40px 0 24px; }

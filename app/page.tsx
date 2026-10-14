@@ -569,6 +569,57 @@ export default function HomePage() {
         <WavyDivider padding="40px 20px 8px" />
 
         {/* ================================================================
+            WATCH — featured shorts strip
+        ================================================================ */}
+        <section style={{ padding: "8px 20px 8px" }} aria-label="Watch">
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+            <div>
+              <h2 className="disp" style={{ margin: 0, fontWeight: 800, fontSize: 26 }}>Watch</h2>
+              <p style={{ margin: "4px 0 0", fontSize: 13, color: "var(--muted)" }}>Lagos rave culture on camera</p>
+            </div>
+            <Link href="/videos" className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--muted)", textDecoration: "none", flexShrink: 0 }}>
+              All shorts →
+            </Link>
+          </div>
+
+          <div className="home-watch-strip">
+            {[
+              { id: "OKBJhoex7xY", title: "Dapping up 10s", views: "1.1K views" },
+              { id: "vABz7oSuYPc", title: "Ravers share their craziest village people experience", views: "105 views" },
+              { id: "BZYDk1rSfSU", title: "Guilty or not game — DJ Edition", views: "37 views" },
+            ].map((v) => (
+              <a
+                key={v.id}
+                href={`https://youtube.com/shorts/${v.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-watch-card"
+                aria-label={v.title}
+              >
+                <div className="home-watch-thumb">
+                  <img
+                    src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`}
+                    alt={v.title}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                  <div className="vid-play-btn" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 4l15 8-15 8V4z" fill="currentColor" />
+                    </svg>
+                  </div>
+                </div>
+                <div style={{ padding: "10px 0 0" }}>
+                  <div className="disp home-watch-title">{v.title}</div>
+                  <div className="mono" style={{ fontSize: 9, letterSpacing: "0.1em", color: "var(--muted-2)", marginTop: 4 }}>{v.views}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <WavyDivider padding="40px 20px 8px" />
+
+        {/* ================================================================
             RESIDENCIES — series chips
         ================================================================ */}
         <section className="residencies-section" style={{ padding: "8px 20px 8px" }} aria-label="Residencies">

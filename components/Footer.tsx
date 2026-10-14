@@ -7,6 +7,7 @@ const NAV_COLS = [
       { label: "Home", href: "/" },
       { label: "Calendar", href: "/calendar" },
       { label: "Gallery", href: "/gallery" },
+      { label: "Watch", href: "/videos" },
     ],
   },
   {
@@ -93,6 +94,18 @@ export default function Footer() {
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M14 3v10.5a3.5 3.5 0 11-3-3.46" stroke="var(--text)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M14 3c.5 2.8 2.3 4.4 5 4.7" stroke="var(--text)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@RaversGuilt"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="footer-social-btn"
+            >
+              <svg width="18" height="14" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+                <rect x="1" y="1" width="22" height="16" rx="4" stroke="var(--text)" strokeWidth="1.7" />
+                <path d="M10 6l6 3-6 3V6z" fill="var(--text)" />
               </svg>
             </a>
           </div>
