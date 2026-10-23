@@ -588,31 +588,22 @@ export default function HomePage() {
               { id: "vABz7oSuYPc", title: "Ravers share their craziest village people experience", views: "105 views" },
               { id: "BZYDk1rSfSU", title: "Guilty or not game — DJ Edition", views: "37 views" },
             ].map((v) => (
-              <a
-                key={v.id}
-                href={`https://youtube.com/shorts/${v.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-watch-card"
-                aria-label={v.title}
-              >
+              <div key={v.id} className="home-watch-card">
                 <div className="home-watch-thumb">
-                  <img
-                    src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`}
-                    alt={v.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1`}
+                    title={v.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                    style={{ width: "100%", height: "100%", border: 0 }}
                   />
-                  <div className="vid-play-btn" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                      <path d="M5 4l15 8-15 8V4z" fill="currentColor" />
-                    </svg>
-                  </div>
                 </div>
                 <div style={{ padding: "10px 0 0" }}>
                   <div className="disp home-watch-title">{v.title}</div>
                   <div className="mono" style={{ fontSize: 9, letterSpacing: "0.1em", color: "var(--muted-2)", marginTop: 4 }}>{v.views}</div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </section>
